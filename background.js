@@ -1,4 +1,4 @@
-console.log("Its background script baby!");
+console.log("Its background script baby !");
 
 var contentId;
 var popupTabId;

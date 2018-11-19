@@ -1,4 +1,4 @@
-console.log("Content script: you bitch!");
+console.log("Content script: you bitch !");
 //set variables
 var auzData = {login:undefined,password:undefined};
 var hueDegrees = 0;
