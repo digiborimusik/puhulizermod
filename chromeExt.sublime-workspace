@@ -361,7 +361,7 @@
 			"file": "popup.js",
 			"settings":
 			{
-				"buffer_size": 2348,
+				"buffer_size": 2347,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -562,7 +562,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -591,7 +591,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -600,15 +600,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2348,
+						"buffer_size": 2347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30,
-								30
+								29,
+								29
 							]
 						],
 						"settings":
