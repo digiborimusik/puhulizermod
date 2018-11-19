@@ -4,304 +4,44 @@
 		"selected_items":
 		[
 			[
-				"re",
-				"return"
-			],
-			[
-				"loa",
-				"loadSensor"
-			],
-			[
-				"laod",
-				"loadSensor"
-			],
-			[
-				"lo",
-				"loadSensor"
-			],
-			[
-				"e",
-				"else"
-			],
-			[
-				"set",
-				"setInterval"
+				"b",
+				"brightness()\tfilter"
 			],
 			[
 				"co",
-				"counter"
-			],
-			[
-				"c",
-				"counter"
-			],
-			[
-				"pad",
-				"padding-left\tproperty"
-			],
-			[
-				"b",
-				"border\tproperty"
-			],
-			[
-				"mar",
-				"margin-bottom\tproperty"
-			],
-			[
-				"pa",
-				"padding-bottom\tproperty"
-			],
-			[
-				"bo",
-				"bottom\tproperty"
-			],
-			[
-				"bor",
-				"border\tproperty"
-			],
-			[
-				"te",
-				"text-align\tproperty"
-			],
-			[
-				"q",
-				"questsLength"
-			],
-			[
-				"cli",
-				"clicker"
-			],
-			[
-				"log",
-				"log"
-			],
-			[
-				"se",
-				"sendToPopup"
-			],
-			[
-				"in",
-				"invert()\tfilter"
-			],
-			[
-				"send",
-				"sendToContent"
-			],
-			[
-				"hu",
-				"hueDegrees"
-			],
-			[
-				"auto",
-				"AutoPretier"
-			],
-			[
-				"seto",
-				"sendToPopup"
-			],
-			[
-				"Ac",
-				"activitySection"
-			],
-			[
-				"che",
-				"checkActivitySection"
-			],
-			[
-				"con",
-				"contentFocus"
-			],
-			[
-				"foc",
-				"focusWin"
-			],
-			[
-				"enter",
-				"enterLogin"
-			],
-			[
-				"pop",
-				"PopupFocus"
-			],
-			[
-				"focus",
-				"contentFocus"
-			],
-			[
-				"go",
-				"goTryLogin"
-			],
-			[
-				"p",
-				"password"
-			],
-			[
-				"a",
-				"auzData"
-			],
-			[
-				"time",
-				"timeouts"
-			],
-			[
-				"w",
-				"waitloginLoad"
-			],
-			[
-				"is",
-				"isLoaded"
-			],
-			[
-				"ca",
-				"callback"
-			],
-			[
-				"sen",
-				"sendToPopup"
-			],
-			[
-				"ta",
-				"popupTabId"
-			],
-			[
-				"pro",
-				"progressBar"
-			],
-			[
-				"le",
-				"left\tproperty"
-			],
-			[
-				"borde",
-				"border-top\tproperty"
-			],
-			[
-				"s",
-				"solid"
-			],
-			[
-				"border",
-				"border-right\tproperty"
-			],
-			[
-				"text-a",
-				"text-align\tproperty"
+				"content\tproperty"
 			],
 			[
 				"f",
-				"flex\tproperty"
-			],
-			[
-				"border-r",
-				"border-radius\tproperty"
-			],
-			[
-				"un",
-				"undefined"
-			],
-			[
-				"und",
-				"undefBody"
-			],
-			[
-				"cons",
-				"construct"
-			],
-			[
-				"add",
-				"addBody"
-			],
-			[
-				"ove",
-				"overflow-x\tproperty"
-			],
-			[
-				"margin-",
-				"margin-left\tproperty"
-			],
-			[
-				"animation",
-				"animation-duration\tproperty"
-			],
-			[
-				"anim",
-				"animation\tproperty"
-			],
-			[
-				"tra",
-				"transition\tproperty"
-			],
-			[
-				"list-sty",
-				"list-style-type\tproperty"
-			],
-			[
-				"si",
-				"list-style-image\tproperty"
-			],
-			[
-				"cy",
-				"cyclePosition"
-			],
-			[
-				"tab",
-				"tabId"
-			],
-			[
-				"open",
-				"openUrl"
-			],
-			[
-				"wi",
-				"window"
-			],
-			[
-				"l",
-				"login"
-			],
-			[
-				"g",
-				"greeting"
-			],
-			[
-				"conte",
-				"contentId"
-			],
-			[
-				"font",
-				"font-variant\tproperty"
-			],
-			[
-				"text",
-				"text-transform\tproperty"
-			],
-			[
-				"fo",
-				"font-weight\tproperty"
-			],
-			[
-				"fil",
 				"filter\tproperty"
-			],
-			[
-				"wid",
-				"width\tproperty"
-			],
-			[
-				"my",
-				"myFunction"
-			],
-			[
-				"all",
-				"allItemsCount"
 			],
 			[
 				"t",
 				"top\tproperty"
 			],
 			[
+				"text",
+				"text-shadow\tproperty"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
 				"fle",
 				"flex-start\tjustify-content"
+			],
+			[
+				"s",
+				"space-around\tjustify-content"
+			],
+			[
+				"tra",
+				"transition\tproperty"
+			],
+			[
+				"c",
+				"center\talign-items"
 			],
 			[
 				"ali",
@@ -318,6 +58,14 @@
 			[
 				"max",
 				"max-height\tproperty"
+			],
+			[
+				"mar",
+				"margin-right\tproperty"
+			],
+			[
+				"le",
+				"flex-start\tjustify-content"
 			],
 			[
 				"min",
@@ -376,8 +124,16 @@
 				"word-spacing\tproperty"
 			],
 			[
+				"w",
+				"width\tproperty"
+			],
+			[
 				"h",
 				"height\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
 			],
 			[
 				"d",
@@ -484,6 +240,10 @@
 				"dudosBreaker"
 			],
 			[
+				"ca",
+				"call"
+			],
+			[
 				"this",
 				"this"
 			],
@@ -514,56 +274,71 @@
 			[
 				"func",
 				"function"
+			],
+			[
+				"call",
+				"callbacktwo"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"time",
+				"timeLeft"
+			],
+			[
+				"is",
+				"isWeekend"
+			],
+			[
+				"sp",
+				"space-between"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"pr",
+				"pos-r\tposition: relative;"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"rbg",
+				"rgba()"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"boxs",
+				"box-sizing"
+			],
+			[
+				"wid",
+				"width"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "background.js",
-			"settings":
-			{
-				"buffer_size": 8567,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content.js",
-			"settings":
-			{
-				"buffer_size": 8582,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "popup.css",
-			"settings":
-			{
-				"buffer_size": 7642,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "popup.html",
-			"settings":
-			{
-				"buffer_size": 1066,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "popup.js",
-			"settings":
-			{
-				"buffer_size": 2346,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -577,12 +352,12 @@
 		"selected_items":
 		[
 			[
-				"Package Control: ",
-				"Package Control: Install Package"
-			],
-			[
 				"LiveReload: Enable/disable plugins",
 				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
 			],
 			[
 				"insta",
@@ -613,36 +388,13 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod"
+		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod"
 	],
 	"file_history":
 	[
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/manifest.json",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/lasthope.png",
-		"/E/BPMonline700/Logs/gpslog.txt",
-		"/E/BPMonline700/AppStructure/rev_0/src/Account.js",
-		"/E/BPMonline700/AppStructure/rev_0/metadata/Account",
-		"/E/BPMonline700/AppStructure/rev_0/src/VwMobileSysSchema.js",
-		"/C/Program Files/Redis/conf/redis.conf",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/content.js",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/popup.css",
-		"/C/Users/User/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/popup.html",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/contentLogin.js",
-		"/C/Users/User/Desktop/The Drone Racing League Simulator.url",
-		"/C/Users/User/Desktop/webdev/sorax/js/1/recursion.js",
-		"/C/Users/User/Desktop/webdev/sorax/js/2/for while.js",
-		"/C/Users/User/Desktop/webdev/sorax/js/1/main.js",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/background.js",
-		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhuMod/popup.js",
-		"/C/Users/User/Desktop/webdev/bootstrap/1/index.html",
-		"/C/Users/User/Desktop/webdev/bootstrap/1/main.css",
-		"/C/Users/User/Desktop/ejector.js",
-		"/C/Users/User/Desktop/databaseutkffm.txt",
-		"/C/Users/User/Desktop/webdev/bootstrap/1/script.js",
-		"/C/Users/User/Desktop/webdev/codegrid/responsive sticky navbar re/script.js",
-		"/C/Users/User/Desktop/webdev/codegrid/responsive sticky navbar re/main.css",
-		"/C/Users/User/Desktop/webdev/codegrid/responsive sticky navbar re/index.html",
+		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/popup.js",
+		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/content.js",
+		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/background.js",
 		"/C/Users/User/Desktop/webdev/codegrid/index.html",
 		"/C/Users/User/Desktop/webdev/codegrid/responsive sticky nav/main.css",
 		"/C/Users/User/Desktop/webdev/codegrid/responsive sticky nav/index.html",
@@ -670,6 +422,7 @@
 		"/C/Users/User/Desktop/webdev/codegrid/script.js",
 		"/C/Users/User/Desktop/webdev/codegrid/main.css",
 		"/C/Users/User/Desktop/webdev/sorax/js/2/main.js",
+		"/C/Users/User/Desktop/webdev/sorax/js/2/for while.js",
 		"/C/Users/User/Desktop/webdev/sorax/js/2/dom.js",
 		"/C/Users/User/Desktop/webdev/sorax/js/2/typesTransform.js",
 		"/C/Users/User/Desktop/webdev/sorax/js/2/main.css",
@@ -683,6 +436,8 @@
 		"/C/Users/User/Desktop/webdev/sorax/js/2/recursion.js",
 		"/C/Users/User/Desktop/webdev/sorax/js/1/inxed.html",
 		"/C/Users/User/Desktop/webdev/js-notes.txt",
+		"/C/Users/User/Desktop/webdev/sorax/js/1/recursion.js",
+		"/C/Users/User/Desktop/webdev/sorax/js/1/main.js",
 		"/C/Users/User/Desktop/webdev/sorax/js/1/main.css",
 		"/C/Users/User/Desktop/main.xml",
 		"/C/Users/User/Desktop/Snapshots/textlog/StatsText/ConnectionStats-2018-06-11-13.23.59.txt",
@@ -713,7 +468,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -727,9 +482,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"hu",
-			"huender",
-			"popupT"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -744,163 +496,23 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\User\\Desktop\\webdev\\chrome extensions\\PuhulizerMod"
+		}
+	],
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "background.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8567,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3833,
-								3833
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2025.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "content.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5284,
-								5284
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2527.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "popup.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7642,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2154,
-								2154
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "popup.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1066,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								915,
-								915
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "popup.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2346,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1860,
-								1860
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -928,7 +540,7 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.console":
 	{
 		"height": 214.0
@@ -938,10 +550,10 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "chromeExt.sublime-project",
+	"project": "",
 	"replace":
 	{
-		"height": 44.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -979,7 +591,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 254.0,
+	"side_bar_width": 214.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
