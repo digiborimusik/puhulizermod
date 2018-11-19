@@ -1,4 +1,4 @@
-console.log("Im a Popup babys !");
+console.log("Im a Popup babys!");
 
 chrome.runtime.sendMessage({greeting: "popup"}, function(response) {
   console.log(response.farewell);
