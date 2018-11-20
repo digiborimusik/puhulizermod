@@ -15,7 +15,7 @@ function loadSensor(){
 
 }
 
-//Self invokation by msg
+//Self invocation by msg
 chrome.runtime.sendMessage({greeting: "content", sayHi: "Content script there!!"});
 
 //zoom
@@ -172,8 +172,11 @@ function autoPretier(){
 
 //Quest selector
 function loadQuest(){
+
+	//Get array of quests
 	var questsLength = document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div').length -1;
 	console.log(questsLength);
+	huender("Detect " + questsLength + " quests")
 
 	//End script if out of quests
 	if (questsLength === 0) {
@@ -181,8 +184,6 @@ function loadQuest(){
 			huender("Out of quests")
 			return
 		}
-
-	huender("Detect " + questsLength + " quests")
 
 	//Select quest by priority
 	function cascadeEntry(){
@@ -220,7 +221,6 @@ function loadQuest(){
 		}
 	}
 
-	cascadeEntry();
 
 	//subfnctions
 	function questInnerText(n){
@@ -234,6 +234,9 @@ function loadQuest(){
 		console.log("Selected quest")
 		huender("Selected quest")	
 	}
+
+	// go
+	cascadeEntry();
 }
 
 
