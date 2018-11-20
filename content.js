@@ -172,11 +172,11 @@ function autoPretier(){
 
 //Quest selector
 function loadQuest(){
-	var questsLength = document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div').length;
+	var questsLength = document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div').length -1;
 	console.log(questsLength);
 
 	//End script if out of quests
-	if (questsLength === 1) {
+	if (questsLength === 0) {
 			console.log("No quests")
 			huender("Out of quests")
 			return
@@ -184,20 +184,43 @@ function loadQuest(){
 
 	huender("Detect " + questsLength + " quests")
 
-	//Skip done quests
-	for (questsLength -= 1; questsLength >= 1; questsLength--) {
-		var questStage = questInnerText([questsLength])
+	//Select quest by priority
+	function cascadeEntry(){
+		for (var i = questsLength; i >= 1; i--) {
+			var questStage = questInnerText([i])
+			if (questStage === "На объекте") {
+				console.log(questStage)
+				clicker([i])
+				return
+			}
+		}
+		for (var i = questsLength; i >= 1; i--) {
+			var questStage = questInnerText([i])
+			if (questStage === "В пути") {
+				console.log(questStage)
+				clicker([i])
+				return
+			}
+		}
+		for (var i = questsLength; i >= 1; i--) {
+			var questStage = questInnerText([i])
+			if (questStage === "Подтверждена") {
+				console.log(questStage)
+				clicker([i])
+				return
+			}
+		}
+		for (var i = questsLength; i >= 1; i--) {
+			var questStage = questInnerText([i])
+			if (questStage === "Готова к старту") {
+				console.log(questStage)
+				clicker([i])
+				return
+			}
+		}
+	}
 
-		if (questStage === "Отменена") {
-			console.log(questStage)
-			continue;
-		}
-		if (questStage !== "Выполнена") {
-			console.log(questStage)
-			clicker([questsLength])
-			break;
-		}
-	};
+	cascadeEntry();
 
 	//subfnctions
 	function questInnerText(n){
