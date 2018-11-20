@@ -9,6 +9,8 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
+
+//Object for process multiply user
 var bodies = {
 
   //construct new position
@@ -150,6 +152,7 @@ var centralScript = {
   },
 
   pretiDatShit:function(){
+    cyclePosition = "Pretier script processing";
     setTimeout(focusWin,100);
     setTimeout(contentFocus,100);
     setTimeout(sendToContent,2000,"runPretier")
@@ -157,6 +160,7 @@ var centralScript = {
   },
 
   loadQuest:function(){
+    cyclePosition = "Load quest";
     setTimeout(popupFocus,500);
     setTimeout(contentFocus,2000);
     sendToContent("loadQuest");
