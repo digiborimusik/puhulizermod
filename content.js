@@ -1,10 +1,10 @@
 console.log("Content script: you bitch !");
+
 //set variables
 var auzData = {login:undefined,password:undefined};
 var hueDegrees = 0;
 
-// setInterval(loadSensor,100)
-
+//Sub function for detect loadiing stage
 function loadSensor(){
 	if (document.querySelector('.x-loading-spinner') !== null) {
 		console.log("Progress wrap detected")
@@ -49,7 +49,7 @@ function checkActivitySection(callback){
 }
 
 
-//Preti dat shit
+//Auto configure interface for puhulizer-friendly format
 function autoPretier(){
 
 	function clickQeuestions(){
@@ -170,10 +170,12 @@ function autoPretier(){
 	var counter = 1;
 }
 
+//Quest selector
 function loadQuest(){
 	var questsLength = document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div').length;
 	console.log(questsLength);
 
+	//End script if out of quests
 	if (questsLength === 1) {
 			console.log("No quests")
 			huender("Out of quests")
@@ -182,6 +184,7 @@ function loadQuest(){
 
 	huender("Detect " + questsLength + " quests")
 
+	//Skip done quests
 	for (questsLength -= 1; questsLength >= 1; questsLength--) {
 		var questStage = questInnerText([questsLength])
 
@@ -196,6 +199,7 @@ function loadQuest(){
 		}
 	};
 
+	//subfnctions
 	function questInnerText(n){
 		var questStage = document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div')[n].querySelector('div:nth-child(9)').innerText;
 		return questStage
