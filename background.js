@@ -162,7 +162,7 @@ var centralScript = {
   loadQuest:function(){
     cyclePosition = "Load quest";
     setTimeout(popupFocus,500);
-    setTimeout(contentFocus,2000);
+    setTimeout(contentFocus,4000);
     sendToContent("loadQuest");
   },
 

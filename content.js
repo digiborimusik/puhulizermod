@@ -64,7 +64,7 @@ function autoPretier(){
 			document.querySelector('[data-item-marker="Задания"]').click()
 			console.log("clickQeuestions bueno");
 			huender("Pretier there: clickQeuestions function ends with bueno")
-			setTimeout(selectGridDataView,6000)
+			setTimeout(selectGridDataView,2000)
 			return
 		} else {
 			setTimeout(clickQeuestions,2000)
@@ -86,7 +86,7 @@ function autoPretier(){
 			document.querySelector('[data-item-marker="GridDataView"]').click()
 			console.log("selectGridDataView bueno")
 			huender("Pretier there: selectGridDataView function ends with bueno")
-			setTimeout(selectCurrentDay,6000)
+			setTimeout(selectCurrentDay,2000)
 			return
 		} else {
 			setTimeout(selectGridDataView,2000)
@@ -107,7 +107,7 @@ function autoPretier(){
 			document.querySelector('[data-item-marker="day"] > span').click()
 			console.log("selectCurrentDay bueno")
 			huender("Pretier there: selectCurrentDay function ends with bueno")
-			setTimeout(selectOwner,6000)
+			setTimeout(selectOwner,2000)
 			return
 		} else {
 			setTimeout(selectCurrentDay,2000)
@@ -128,7 +128,7 @@ function autoPretier(){
 			document.querySelector('[data-item-marker="OwnerFixedFilterBtn"] > li').click()
 			console.log("selectOwner bueno")
 			huender("Pretier there: selectOwner function ends with bueno")
-			setTimeout(cosmetics,6000)
+			setTimeout(cosmetics,2000)
 			return
 		} else {
 			document.querySelector('[data-item-marker="OwnerFixedFilterBtn"] > span').click()
