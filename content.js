@@ -247,41 +247,41 @@ function loadQuest(){
 function huender(asd){
 	console.log(asd);
 	chrome.runtime.sendMessage({greeting: "content", sayHi:asd}, function(response) {
- 		console.log(response.farewell);
+		console.log(response.farewell);
 	});
 }
 
 //Msg listener
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-  	//Load quest command
-  	if (request.do === "loadQuest") {
-  		loadQuest();
-  	}
-  	
-  	//Check for loaded and answer to bg
-  	if (request.do === "runPretier") {
-  		setTimeout(autoPretier,1000)
-  	}
-  	if (request.do === "checkActivitySection"){	
-    	checkActivitySection(function(answer){
-    		sendResponse({isLoaded: answer});
-    	})
-    }
-    if (request.do === "checkLogin"){	
-    	checkLoginForm(function(answer){
-    		sendResponse({isLoaded: answer});
-    	})
-    }
-    if (request.do === "sendAuzData") {
-    	console.log(auzData);
-    	auzData.login = request.sayHi.login;
-    	auzData.password = request.sayHi.password;
-    	console.log(auzData);
-    	huender("Received autorization data for user " + auzData.login);
-    }
-    if (request.do === "btnLogin") {
-    	function enterLogin(){
+	//Load quest command
+	if (request.do === "loadQuest") {
+		loadQuest();
+	}
+	
+	//Check for loaded and answer to bg
+	if (request.do === "runPretier") {
+		setTimeout(autoPretier,1000)
+	}
+	if (request.do === "checkActivitySection"){	
+		checkActivitySection(function(answer){
+			sendResponse({isLoaded: answer});
+		})
+	}
+	if (request.do === "checkLogin"){	
+		checkLoginForm(function(answer){
+			sendResponse({isLoaded: answer});
+		})
+	}
+	if (request.do === "sendAuzData") {
+		console.log(auzData);
+		auzData.login = request.sayHi.login;
+		auzData.password = request.sayHi.password;
+		console.log(auzData);
+		huender("Received autorization data for user " + auzData.login);
+	}
+	if (request.do === "btnLogin") {
+		function enterLogin(){
 			document.activeElement.blur();
 			document.querySelector("[data-item-marker=loginEdit]>input").focus();
 			setTimeout(enterLogin2,100);
@@ -323,6 +323,6 @@ chrome.runtime.onMessage.addListener(
 			document.querySelector("[data-item-marker=btnLogin]").click();
 		}
 		enterLogin();
-    }
+	}
   });
 
