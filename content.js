@@ -208,6 +208,8 @@ function loadQuest(){
 	function clicker(n){
 		document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div')[n].click()
 		document.querySelectorAll('#grid-ActivitySectionV2DataGridGrid-wrap > div')[n].querySelector('.grid-row-actions > span').click()
+		console.log("Selected quest")
+		huender("Selected quest")	
 	}
 }
 

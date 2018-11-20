@@ -166,6 +166,10 @@ var centralScript = {
     sendToContent("loadQuest");
   },
 
+  processStage:function(){
+
+  },
+
   timeouts:[],
 };
 
@@ -253,13 +257,20 @@ chrome.runtime.onMessage.addListener(
     if (request.sayHi === "PZAD02") {
       console.log("pretier done go next")
       sendToPopup("go next",1000)
-      centralScript.loadQuest();
+      centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
     }
 
-    //Loadquest script ending
+    //Loadquest script ending false
     if (request.sayHi === "Out of quests") {
       console.log("loadquest done")
       chrome.tabs.remove(tabId)
+    }
+
+    //Loadquest script ending true
+    if (request.sayHi === "Selected quest") {
+      console.log("Received selection")
+      sendToPopup("Received selection, go processing")
+      centralScript.timeouts.push( setTimeout(centralScript.processStage,2000) )
     }
 
   });
