@@ -1,4 +1,4 @@
-console.log("Its background script baby !");
+console.log("Its background script baby!");
 
 var contentId;
 var popupTabId;
@@ -245,10 +245,17 @@ chrome.runtime.onMessage.addListener(
       break;
     };
 
+    //Pretier script ending
     if (request.sayHi === "PZAD02") {
       console.log("pretier done go next")
       sendToPopup("go next",1000)
       centralScript.loadQuest();
+    }
+
+    //Loadquest script ending
+    if (request.sayHi === "Out of quests") {
+      console.log("loadquest done")
+      chrome.tabs.remove(tabId)
     }
 
   });

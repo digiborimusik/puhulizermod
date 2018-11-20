@@ -176,6 +176,7 @@ function loadQuest(){
 
 	if (questsLength === 1) {
 			console.log("No quests")
+			huender("Out of quests")
 			return
 		}
 
