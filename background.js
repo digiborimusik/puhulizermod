@@ -266,7 +266,7 @@ chrome.runtime.onMessage.addListener(
       chrome.tabs.remove(tabId)
     }
 
-    //Loadquest script ending true
+    //Loadquest script ending true  
     if (request.sayHi === "Selected quest") {
       console.log("Received selection")
       sendToPopup("Received selection, go processing")
