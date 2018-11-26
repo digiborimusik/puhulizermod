@@ -363,7 +363,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 9215,
+				"buffer_size": 8310,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -561,21 +561,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9215,
+						"buffer_size": 8310,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1606,
-								1606
+								450,
+								450
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 6,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": false,
 							"word_wrap": false,
 							"wrap_width": 120
@@ -600,8 +600,8 @@
 						"selection":
 						[
 							[
-								7519,
-								7519
+								7599,
+								7599
 							]
 						],
 						"settings":
@@ -615,10 +615,10 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 3800.0,
+						"translation.y": 2507.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -643,10 +643,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
