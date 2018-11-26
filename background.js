@@ -167,7 +167,7 @@ var centralScript = {
 	},
 
 	processStage:function(){
-
+		sendToContent("processNow");
 	},
 
 	timeouts:[],

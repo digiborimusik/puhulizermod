@@ -18,6 +18,14 @@ function loadSensor(){
 //Self invocation by msg
 chrome.runtime.sendMessage({greeting: "content", sayHi: "Content script there!!"});
 
+//setup sender
+function huender(asd){
+	console.log(asd);
+	chrome.runtime.sendMessage({greeting: "content", sayHi:asd}, function(response) {
+		console.log(response.farewell);
+	});
+}
+
 //zoom
 document.body.style.zoom = "75%";
 
@@ -178,13 +186,6 @@ function loadQuest(){
 	console.log(questsLength);
 	huender("Detect " + questsLength + " quests")
 
-	//End script if out of quests
-	if (questsLength === 0) {
-			console.log("No quests")
-			huender("Out of quests")
-			return
-		}
-
 	//Select quest by priority
 	function cascadeEntry(){
 		for (var i = questsLength; i >= 1; i--) {
@@ -219,8 +220,13 @@ function loadQuest(){
 				return
 			}
 		}
+
+		//Then out
+		console.log("No quests");
+		huender("Out of quests");
 	}
 
+	
 
 	//subfnctions
 	function questInnerText(n){
@@ -239,21 +245,23 @@ function loadQuest(){
 	cascadeEntry();
 }
 
+//processQuest
+//
+function processDat(){
+	console.log("debug");
 
-
-
-
-//setup sender
-function huender(asd){
-	console.log(asd);
-	chrome.runtime.sendMessage({greeting: "content", sayHi:asd}, function(response) {
-		console.log(response.farewell);
-	});
 }
+
 
 //Msg listener
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+
+  	//start
+  	if (request.do === "processNow") {
+  		processDat();
+  	}
+
 	//Load quest command
 	if (request.do === "loadQuest") {
 		loadQuest();
