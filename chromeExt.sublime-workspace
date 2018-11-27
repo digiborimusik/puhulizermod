@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ques",
+				"quests"
+			],
+			[
+				"send",
+				"sendToContent"
+			],
+			[
+				"pr",
+				"processDat"
+			],
+			[
 				"cli",
 				"clicker"
 			],
@@ -320,10 +332,6 @@
 				"padding"
 			],
 			[
-				"pr",
-				"pos-r\tposition: relative;"
-			],
-			[
 				"di",
 				"display"
 			],
@@ -363,7 +371,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 8310,
+				"buffer_size": 8340,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -372,7 +380,7 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 9267,
+				"buffer_size": 9349,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -515,7 +523,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -529,6 +537,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"process"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -552,7 +561,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -561,15 +570,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8310,
+						"buffer_size": 8340,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								450,
-								450
+								3994,
+								3994
 							]
 						],
 						"settings":
@@ -581,10 +590,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2101.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -593,15 +602,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9267,
+						"buffer_size": 9349,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7599,
-								7599
+								6362,
+								6362
 							]
 						],
 						"settings":
@@ -615,10 +624,10 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 2507.0,
+						"translation.y": 3407.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -646,7 +655,7 @@
 						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -654,7 +663,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -695,7 +704,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 46.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
