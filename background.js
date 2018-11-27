@@ -1,6 +1,7 @@
 console.log("Its background script baby!");
 
 //branch2
+//huyanch
 
 var contentId;
 var popupTabId;
