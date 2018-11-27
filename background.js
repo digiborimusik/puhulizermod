@@ -1,5 +1,7 @@
 console.log("Its background script baby!");
 
+//branch2
+
 var contentId;
 var popupTabId;
 var popupId;
