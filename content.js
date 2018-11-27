@@ -44,8 +44,8 @@ function checkLoginForm(callback){
 }
 
 //Checker for activitisection loading
-function checkActivitySection(callback){
-	if (document.querySelector('[data-item-marker="Задания"]') !== null) {
+function checkLeftBar(callback){
+	if (document.querySelector('[data-item-marker="Запустить процесс "]') !== null) {
 		console.log("Loaded");
 		// return "loaded"
 		callback("loaded")
@@ -53,7 +53,7 @@ function checkActivitySection(callback){
 	};
 	console.log("Check");
 	callback("Not loaded")
-	setTimeout(checkActivitySection,10)
+	setTimeout(checkLeftBar,10)
 }
 
 
@@ -271,8 +271,8 @@ chrome.runtime.onMessage.addListener(
 	if (request.do === "runPretier") {
 		setTimeout(autoPretier,1000)
 	}
-	if (request.do === "checkActivitySection"){	
-		checkActivitySection(function(answer){
+	if (request.do === "checkLeftBar"){
+		checkLeftBar(function(answer){
 			sendResponse({isLoaded: answer});
 		})
 	}
@@ -301,7 +301,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterLogin3,100);
 		}
 		function enterLogin3(){
-			document.querySelector("[data-item-marker=loginEdit]>input").value = "Elukach";
+			document.querySelector("[data-item-marker=loginEdit]>input").value = "vkomelkov";
 			setTimeout(enterPassword,100);
 		}
 		function enterPassword(){
@@ -309,7 +309,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterPassword2,100);
 		}
 		function enterPassword2(){
-			document.querySelector("[data-item-marker=passwordEdit]>input").value = "1";
+			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Dkfl#123";
 			setTimeout(enterPassword3,100);
 		}
 		function enterPassword3(){

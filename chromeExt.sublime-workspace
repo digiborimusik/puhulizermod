@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"c",
+				"console"
+			],
+			[
 				"ques",
 				"quests"
 			],
@@ -70,10 +74,6 @@
 			[
 				"tra",
 				"transition\tproperty"
-			],
-			[
-				"c",
-				"center\talign-items"
 			],
 			[
 				"ali",
@@ -371,7 +371,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 8340,
+				"buffer_size": 8345,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -380,7 +380,7 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 9349,
+				"buffer_size": 9336,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -447,6 +447,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod/manifest.json",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/popup.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/content.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/background.js",
@@ -537,6 +538,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lucach",
 			"process"
 		],
 		"highlight": true,
@@ -561,7 +563,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -570,15 +572,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8340,
+						"buffer_size": 8345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3994,
-								3994
+								3250,
+								3250
 							]
 						],
 						"settings":
@@ -590,10 +592,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 2101.0,
+						"translation.y": 2067.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -602,15 +604,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9349,
+						"buffer_size": 9336,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6362,
-								6362
+								1044,
+								1044
 							]
 						],
 						"settings":
@@ -624,10 +626,10 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 3407.0,
+						"translation.y": 509.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -655,7 +657,7 @@
 						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

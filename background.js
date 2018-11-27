@@ -85,7 +85,7 @@ var centralScript = {
 	if (typeof tabId === "undefined"){
 		//make new tab
 		 chrome.tabs.create({
-		"url": "https://utkffm.bpmonline.com",
+		"url": "https://ffm.ukrtelecom.net",
 		"pinned": true,
 		"active": false,
 		"selected":false,
@@ -137,20 +137,20 @@ var centralScript = {
 	setTimeout(popupFocus,3500);
 	setTimeout(focusLast,3600);
 	sendToPopup("Strap in",4000);
-	centralScript.timeouts.push( setTimeout(centralScript.w84Activity,4000) );
+	centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,4000) );
 	},
 
-	w84Activity: function(){
-	cyclePosition = "Wait fo activitySection";
-	sendToPopup("Send request fo activitySection",10);
-	sendToContent("checkActivitySection","bitches",function(answer){
+	w84loadLeftBar: function(){
+	cyclePosition = "Wait fo load left bar";
+	sendToPopup("Send request",10);
+	sendToContent("checkLeftBar","bitches",function(answer){
 		if (answer === "loaded") {
 		sendToPopup("Loaded",1000)
 		centralScript.timeouts.push( setTimeout(centralScript.pretiDatShit,2000) );
 		return
 		}
 		sendToPopup("Loadn't",5000)
-		centralScript.timeouts.push( setTimeout(centralScript.w84Activity,5000) );
+		centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,5000) );
 	})
 	},
 
@@ -192,7 +192,7 @@ function sendToContent(comand,sayHi,callback){
 		}
 		callback(response.isLoaded);
 	}
-	if (comand === "checkActivitySection") {
+	if (comand === "checkLeftBar") {
 		if (response === undefined) {
 		callback("undef answer");
 		return
