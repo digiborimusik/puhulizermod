@@ -155,8 +155,12 @@ var centralScript = {
 	},
 
 	selectAndLoad:function(){
+		setTimeout(focusWin,100);
+		setTimeout(contentFocus,100);
 		sendToContent("selectAndLoad","bitch");
-		
+		sendToPopup("selectAndLoad function start",500);
+		cyclePosition = "Select and load";
+
 	},
 
 	// pretiDatShit:function(){
@@ -174,9 +178,9 @@ var centralScript = {
 	// sendToContent("loadQuest");
 	// },
 
-	// processStage:function(){
-	// 	sendToContent("processNow");
-	// },
+	processStage:function(){
+		sendToContent("processNow");
+	},
 
 	timeouts:[],
 };
@@ -262,14 +266,14 @@ chrome.runtime.onMessage.addListener(
 	};
 
 	//Pretier script ending
-	if (request.sayHi === "PZAD02") {
-		console.log("pretier done go next")
-		sendToPopup("go next",1000)
-		centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
-	}
+	// if (request.sayHi === "PZAD02") {
+	// 	console.log("pretier done go next")
+	// 	sendToPopup("go next",1000)
+	// 	centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
+	// }
 
 	//Loadquest script ending false
-	if (request.sayHi === "Out of quests") {
+	if (request.sayHi === "No items to select") {
 		console.log("loadquest done")
 		chrome.tabs.remove(tabId)
 	}

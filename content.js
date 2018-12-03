@@ -57,6 +57,7 @@ function checkLeftBar(callback){
 }
 
 function selectAndLoad(){
+	var count = 1;
 	function clickNc(){
 		if (document.querySelector('[data-item-marker="centerNotification"]') !== null) {
 			if (document.querySelector('[data-item-marker="centerNotification"]').classList[3] !== "t-btn-pressed") {
@@ -67,7 +68,7 @@ function selectAndLoad(){
 				console.log("Clicked")
 				huender("Clicked")
 			}
-			setTimeout(select,1000)
+			setTimeout(select,2000)
 		} else {
 			setTimeout(selectAndLoad,1000)
 			console.log("centerNotification is null")
@@ -75,16 +76,28 @@ function selectAndLoad(){
 		}
 	}
 	function select(){
-		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length
-		if (questLength == 0) {
+		console.log("selector there")
+		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length;
+		
+		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].classList[0] ===  "empty-grid-message") {
 			console.log("No quest")
 			huender("No items to select")
 			return
+		}
+		if (questLength == 0) {
+			if (count == 5) {
+				console.log("No quest")
+				huender("No items to select")
+				return
+			}
+			console.log("try: " + count)
+			count++
+			setTimeout(select,2000)
 		} else {
 			document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
 			document.querySelector('[data-item-marker="centerNotification"]').click()
 			console.log("Select")
-			huender("select")
+			huender("Selected quest")
 		}
 
 	}
@@ -341,7 +354,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterLogin3,100);
 		}
 		function enterLogin3(){
-			document.querySelector("[data-item-marker=loginEdit]>input").value = "vkomelkov";
+			document.querySelector("[data-item-marker=loginEdit]>input").value = "vnikolin";
 			setTimeout(enterPassword,100);
 		}
 		function enterPassword(){
@@ -349,7 +362,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterPassword2,100);
 		}
 		function enterPassword2(){
-			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Dkfl#123";
+			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Djkjlz#1";
 			setTimeout(enterPassword3,100);
 		}
 		function enterPassword3(){
