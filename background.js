@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-//master
-=======
-//branch2
-//fo ffm.ukrtelecom.net
->>>>>>> ffm.ukrtelecom.net
 
 console.log("Its background script baby!");
 
@@ -187,7 +181,7 @@ var centralScript = {
 	},
 
 	timeouts:[],
-	
+
 };
 
 
@@ -213,6 +207,7 @@ function sendToContent(comand,sayHi,callback){
 		}
 		callback(response.isLoaded);
 	}
+})
 }
 
 function sendToPopup(sayHi,countTime){
