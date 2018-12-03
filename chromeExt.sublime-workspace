@@ -447,6 +447,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/User/Desktop/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/index.html",
 		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod/manifest.json",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/popup.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/content.js",
@@ -524,7 +525,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -592,7 +593,7 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 2067.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -146,7 +146,7 @@ var centralScript = {
 	sendToContent("checkLeftBar","bitches",function(answer){
 		if (answer === "loaded") {
 		sendToPopup("Loaded",1000)
-		centralScript.timeouts.push( setTimeout(centralScript.pretiDatShit,2000) );
+		centralScript.timeouts.push( setTimeout(centralScript.selectAndLoad,2000) );
 		return
 		}
 		sendToPopup("Loadn't",5000)
@@ -154,24 +154,29 @@ var centralScript = {
 	})
 	},
 
-	pretiDatShit:function(){
-	cyclePosition = "Pretier script processing";
-	setTimeout(focusWin,100);
-	setTimeout(contentFocus,100);
-	setTimeout(sendToContent,2000,"runPretier")
-	sendToPopup("Start autoPretier",2000)
+	selectAndLoad:function(){
+		sendToContent("selectAndLoad","bitch");
+		
 	},
 
-	loadQuest:function(){
-	cyclePosition = "Load quest";
-	setTimeout(popupFocus,500);
-	setTimeout(contentFocus,4000);
-	sendToContent("loadQuest");
-	},
+	// pretiDatShit:function(){
+	// cyclePosition = "Pretier script processing";
+	// setTimeout(focusWin,100);
+	// setTimeout(contentFocus,100);
+	// setTimeout(sendToContent,2000,"runPretier")
+	// sendToPopup("Start autoPretier",2000)
+	// },
 
-	processStage:function(){
-		sendToContent("processNow");
-	},
+	// loadQuest:function(){
+	// cyclePosition = "Load quest";
+	// setTimeout(popupFocus,500);
+	// setTimeout(contentFocus,4000);
+	// sendToContent("loadQuest");
+	// },
+
+	// processStage:function(){
+	// 	sendToContent("processNow");
+	// },
 
 	timeouts:[],
 };

@@ -56,6 +56,42 @@ function checkLeftBar(callback){
 	setTimeout(checkLeftBar,10)
 }
 
+function selectAndLoad(){
+	function clickNc(){
+		if (document.querySelector('[data-item-marker="centerNotification"]') !== null) {
+			if (document.querySelector('[data-item-marker="centerNotification"]').classList[3] !== "t-btn-pressed") {
+				document.querySelector('[data-item-marker="centerNotification"]').click()
+				console.log("Click")
+				huender("Click")
+			} else {
+				console.log("Clicked")
+				huender("Clicked")
+			}
+			setTimeout(select,1000)
+		} else {
+			setTimeout(selectAndLoad,1000)
+			console.log("centerNotification is null")
+			huender("centerNotification is null")
+		}
+	}
+	function select(){
+		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length
+		if (questLength == 0) {
+			console.log("No quest")
+			huender("No items to select")
+			return
+		} else {
+			document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
+			document.querySelector('[data-item-marker="centerNotification"]').click()
+			console.log("Select")
+			huender("select")
+		}
+
+	}
+	setTimeout(clickNc,500);
+}
+
+
 
 //Auto configure interface for puhulizer-friendly format
 function autoPretier(){
@@ -256,6 +292,10 @@ function processDat(){
 //Msg listener
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+
+  	if (request.do === "selectAndLoad") {
+  		selectAndLoad();
+  	}
 
   	//start
   	if (request.do === "processNow") {
