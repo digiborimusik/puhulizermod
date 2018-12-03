@@ -4,7 +4,46 @@
 		"selected_items":
 		[
 			[
-
+				"re",
+				"return"
+			],
+			[
+				"pro",
+				"processDat"
+			],
+			[
+				"fa",
+				"false"
+			],
+			[
+				"es",
+				"else"
+			],
+			[
+				"cl",
+				"clickNc"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"que",
+				"questLength"
+			],
+			[
+				"select",
+				"selectAndLoad"
+			],
+			[
+				"se",
+				"sendToContent"
+			],
+			[
 				"c",
 				"console"
 			],
@@ -27,10 +66,6 @@
 			[
 				"q",
 				"questStage"
-			],
-			[
-				"pro",
-				"processStage"
 			],
 			[
 				"process",
@@ -364,9 +399,7 @@
 			"file": "background.js",
 			"settings":
 			{
-
-				"buffer_size": 8679,
-
+				"buffer_size": 7965,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -375,9 +408,7 @@
 			"file": "content.js",
 			"settings":
 			{
-
-				"buffer_size": 10946,
-
+				"buffer_size": 11577,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -561,7 +592,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -570,17 +601,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-
-						"buffer_size": 8679,
+						"buffer_size": 7965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-
-								4806,
-								4806
+								5586,
+								5586
 							]
 						],
 						"settings":
@@ -592,10 +621,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -604,17 +633,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-
-						"buffer_size": 10946,
+						"buffer_size": 11577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-
-								1918,
-								1918
+								8881,
+								8881
 							]
 						],
 						"settings":
@@ -628,11 +655,10 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-
-						"translation.y": 333.0,
+						"translation.y": 4440.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -660,7 +686,7 @@
 						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

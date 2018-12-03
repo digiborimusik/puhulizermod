@@ -298,8 +298,36 @@ function loadQuest(){
 //processQuest
 //
 function processDat(){
-	console.log("debug");
+	var isLoading = loadSensor();
+	if (isLoading === false) {
+		console.log("go")
+		var currentPosition = document.querySelector('#TsiVisitPageStatusComboBoxEdit-el').value;
+		cascadeSelection(currentPosition);
+		return
+	} else {
+		console.log("re try")
+		setTimeout(processDat,2000)
+	}
 
+	function cascadeSelection(p){
+		console.log(p);
+		if (p === "Назначена") {
+			console.log("Назначена");
+			return
+		}
+		if (p === "Подтверждена") {
+			console.log("Подтверждена");
+			return
+		}
+		if (p === "В пути") {
+			console.log("В пути");
+			return
+		}
+		if (p === "На объекте") {
+			console.log("На объекте");
+			return
+		}
+	}
 }
 
 
