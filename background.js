@@ -162,21 +162,6 @@ var centralScript = {
 
 	},
 
-	// pretiDatShit:function(){
-	// cyclePosition = "Pretier script processing";
-	// setTimeout(focusWin,100);
-	// setTimeout(contentFocus,100);
-	// setTimeout(sendToContent,2000,"runPretier")
-	// sendToPopup("Start autoPretier",2000)
-	// },
-
-	// loadQuest:function(){
-	// cyclePosition = "Load quest";
-	// setTimeout(popupFocus,500);
-	// setTimeout(contentFocus,4000);
-	// sendToContent("loadQuest");
-	// },
-
 	processStage:function(){
 		sendToContent("processNow");
 	},
@@ -264,13 +249,6 @@ chrome.runtime.onMessage.addListener(
 		sendToPopup("Stop dat shit baby");
 		break;
 	};
-
-	//Pretier script ending
-	// if (request.sayHi === "PZAD02") {
-	// 	console.log("pretier done go next")
-	// 	sendToPopup("go next",1000)
-	// 	centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
-	// }
 
 	//Loadquest script ending false
 	if (request.sayHi === "No items to select") {

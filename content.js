@@ -56,6 +56,7 @@ function checkLeftBar(callback){
 	setTimeout(checkLeftBar,10)
 }
 
+//Activity selection and open quest
 function selectAndLoad(){
 	var count = 1;
 	function clickNc(){
