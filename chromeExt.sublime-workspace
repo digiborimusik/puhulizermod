@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"es",
+				"else"
+			],
+			[
+				"cl",
+				"clickNc"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"que",
+				"questLength"
+			],
+			[
+				"select",
+				"selectAndLoad"
+			],
+			[
+				"se",
+				"sendToContent"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
 				"ques",
 				"quests"
 			],
@@ -32,16 +64,8 @@
 				"processing"
 			],
 			[
-				"se",
-				"sendToPopup"
-			],
-			[
 				"b",
 				"brightness()\tfilter"
-			],
-			[
-				"co",
-				"content\tproperty"
 			],
 			[
 				"f",
@@ -70,10 +94,6 @@
 			[
 				"tra",
 				"transition\tproperty"
-			],
-			[
-				"c",
-				"center\talign-items"
 			],
 			[
 				"ali",
@@ -371,7 +391,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 8340,
+				"buffer_size": 8679,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -380,7 +400,7 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 9349,
+				"buffer_size": 10946,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -447,6 +467,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/User/Desktop/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/index.html",
+		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod/manifest.json",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/popup.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/content.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/background.js",
@@ -523,7 +545,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -537,6 +559,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lucach",
 			"process"
 		],
 		"highlight": true,
@@ -561,7 +584,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -570,15 +593,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8340,
+						"buffer_size": 8679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3994,
-								3994
+								4806,
+								4806
 							]
 						],
 						"settings":
@@ -590,10 +613,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 2101.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -602,15 +625,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9349,
+						"buffer_size": 10946,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6362,
-								6362
+								1918,
+								1918
 							]
 						],
 						"settings":
@@ -624,10 +647,10 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 3407.0,
+						"translation.y": 333.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{

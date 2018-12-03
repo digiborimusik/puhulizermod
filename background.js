@@ -1,7 +1,11 @@
-console.log("Its background script baby!");
+<<<<<<< HEAD
+//master
+=======
+//branch2
+//fo ffm.ukrtelecom.net
+>>>>>>> ffm.ukrtelecom.net
 
-//branch1	
-//heranch
+console.log("Its background script baby!");
 
 var contentId;
 var popupTabId;
@@ -85,7 +89,7 @@ var centralScript = {
 	if (typeof tabId === "undefined"){
 		//make new tab
 		 chrome.tabs.create({
-		"url": "https://utkffm.bpmonline.com",
+		"url": "https://ffm.ukrtelecom.net",
 		"pinned": true,
 		"active": false,
 		"selected":false,
@@ -137,43 +141,53 @@ var centralScript = {
 	setTimeout(popupFocus,3500);
 	setTimeout(focusLast,3600);
 	sendToPopup("Strap in",4000);
-	centralScript.timeouts.push( setTimeout(centralScript.w84Activity,4000) );
+	centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,4000) );
 	},
 
-	w84Activity: function(){
-	cyclePosition = "Wait fo activitySection";
-	sendToPopup("Send request fo activitySection",10);
-	sendToContent("checkActivitySection","bitches",function(answer){
+	w84loadLeftBar: function(){
+	cyclePosition = "Wait fo load left bar";
+	sendToPopup("Send request",10);
+	sendToContent("checkLeftBar","bitches",function(answer){
 		if (answer === "loaded") {
 		sendToPopup("Loaded",1000)
-		centralScript.timeouts.push( setTimeout(centralScript.pretiDatShit,2000) );
+		centralScript.timeouts.push( setTimeout(centralScript.selectAndLoad,2000) );
 		return
 		}
 		sendToPopup("Loadn't",5000)
-		centralScript.timeouts.push( setTimeout(centralScript.w84Activity,5000) );
+		centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,5000) );
 	})
 	},
 
-	pretiDatShit:function(){
-	cyclePosition = "Pretier script processing";
-	setTimeout(focusWin,100);
-	setTimeout(contentFocus,100);
-	setTimeout(sendToContent,2000,"runPretier")
-	sendToPopup("Start autoPretier",2000)
+	selectAndLoad:function(){
+		setTimeout(focusWin,100);
+		setTimeout(contentFocus,100);
+		sendToContent("selectAndLoad","bitch");
+		sendToPopup("selectAndLoad function start",500);
+		cyclePosition = "Select and load";
+
 	},
 
-	loadQuest:function(){
-	cyclePosition = "Load quest";
-	setTimeout(popupFocus,500);
-	setTimeout(contentFocus,4000);
-	sendToContent("loadQuest");
-	},
+	// pretiDatShit:function(){
+	// cyclePosition = "Pretier script processing";
+	// setTimeout(focusWin,100);
+	// setTimeout(contentFocus,100);
+	// setTimeout(sendToContent,2000,"runPretier")
+	// sendToPopup("Start autoPretier",2000)
+	// },
+
+	// loadQuest:function(){
+	// cyclePosition = "Load quest";
+	// setTimeout(popupFocus,500);
+	// setTimeout(contentFocus,4000);
+	// sendToContent("loadQuest");
+	// },
 
 	processStage:function(){
 		sendToContent("processNow");
 	},
 
 	timeouts:[],
+	
 };
 
 
@@ -192,16 +206,15 @@ function sendToContent(comand,sayHi,callback){
 		}
 		callback(response.isLoaded);
 	}
-	if (comand === "checkActivitySection") {
+	if (comand === "checkLeftBar") {
 		if (response === undefined) {
 		callback("undef answer");
 		return
 		}
 		callback(response.isLoaded);
 	}
-	}
-	);
 }
+
 function sendToPopup(sayHi,countTime){
 	chrome.tabs.sendMessage(popupTabId, {
 		greeting: "bgScript",
@@ -257,14 +270,14 @@ chrome.runtime.onMessage.addListener(
 	};
 
 	//Pretier script ending
-	if (request.sayHi === "PZAD02") {
-		console.log("pretier done go next")
-		sendToPopup("go next",1000)
-		centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
-	}
+	// if (request.sayHi === "PZAD02") {
+	// 	console.log("pretier done go next")
+	// 	sendToPopup("go next",1000)
+	// 	centralScript.timeouts.push( setTimeout(centralScript.loadQuest,2000) )
+	// }
 
 	//Loadquest script ending false
-	if (request.sayHi === "Out of quests") {
+	if (request.sayHi === "No items to select") {
 		console.log("loadquest done")
 		chrome.tabs.remove(tabId)
 	}

@@ -44,8 +44,8 @@ function checkLoginForm(callback){
 }
 
 //Checker for activitisection loading
-function checkActivitySection(callback){
-	if (document.querySelector('[data-item-marker="Задания"]') !== null) {
+function checkLeftBar(callback){
+	if (document.querySelector('[data-item-marker="Запустить процесс "]') !== null) {
 		console.log("Loaded");
 		// return "loaded"
 		callback("loaded")
@@ -53,8 +53,57 @@ function checkActivitySection(callback){
 	};
 	console.log("Check");
 	callback("Not loaded")
-	setTimeout(checkActivitySection,10)
+	setTimeout(checkLeftBar,10)
 }
+
+function selectAndLoad(){
+	var count = 1;
+	function clickNc(){
+		if (document.querySelector('[data-item-marker="centerNotification"]') !== null) {
+			if (document.querySelector('[data-item-marker="centerNotification"]').classList[3] !== "t-btn-pressed") {
+				document.querySelector('[data-item-marker="centerNotification"]').click()
+				console.log("Click")
+				huender("Click")
+			} else {
+				console.log("Clicked")
+				huender("Clicked")
+			}
+			setTimeout(select,2000)
+		} else {
+			setTimeout(selectAndLoad,1000)
+			console.log("centerNotification is null")
+			huender("centerNotification is null")
+		}
+	}
+	function select(){
+		console.log("selector there")
+		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length;
+		
+		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].classList[0] ===  "empty-grid-message") {
+			console.log("No quest")
+			huender("No items to select")
+			return
+		}
+		if (questLength == 0) {
+			if (count == 5) {
+				console.log("No quest")
+				huender("No items to select")
+				return
+			}
+			console.log("try: " + count)
+			count++
+			setTimeout(select,2000)
+		} else {
+			document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
+			document.querySelector('[data-item-marker="centerNotification"]').click()
+			console.log("Select")
+			huender("Selected quest")
+		}
+
+	}
+	setTimeout(clickNc,500);
+}
+
 
 
 //Auto configure interface for puhulizer-friendly format
@@ -257,6 +306,10 @@ function processDat(){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
 
+  	if (request.do === "selectAndLoad") {
+  		selectAndLoad();
+  	}
+
   	//start
   	if (request.do === "processNow") {
   		processDat();
@@ -271,8 +324,8 @@ chrome.runtime.onMessage.addListener(
 	if (request.do === "runPretier") {
 		setTimeout(autoPretier,1000)
 	}
-	if (request.do === "checkActivitySection"){	
-		checkActivitySection(function(answer){
+	if (request.do === "checkLeftBar"){
+		checkLeftBar(function(answer){
 			sendResponse({isLoaded: answer});
 		})
 	}
@@ -301,7 +354,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterLogin3,100);
 		}
 		function enterLogin3(){
-			document.querySelector("[data-item-marker=loginEdit]>input").value = "Elukach";
+			document.querySelector("[data-item-marker=loginEdit]>input").value = "vnikolin";
 			setTimeout(enterPassword,100);
 		}
 		function enterPassword(){
@@ -309,7 +362,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterPassword2,100);
 		}
 		function enterPassword2(){
-			document.querySelector("[data-item-marker=passwordEdit]>input").value = "1";
+			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Djkjlz#1";
 			setTimeout(enterPassword3,100);
 		}
 		function enterPassword3(){
