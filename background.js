@@ -1,4 +1,5 @@
 
+
 console.log("Its background script baby!");
 
 var contentId;

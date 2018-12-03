@@ -4,34 +4,7 @@
 		"selected_items":
 		[
 			[
-				"es",
-				"else"
-			],
-			[
-				"cl",
-				"clickNc"
-			],
-			[
-				"set",
-				"setTimeout"
-			],
-			[
-				"co",
-				"console"
-			],
-			[
-				"que",
-				"questLength"
-			],
-			[
-				"select",
-				"selectAndLoad"
-			],
-			[
-				"se",
-				"sendToContent"
-			],
-			[
+
 				"c",
 				"console"
 			],
@@ -391,7 +364,9 @@
 			"file": "background.js",
 			"settings":
 			{
+
 				"buffer_size": 8679,
+
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -400,7 +375,9 @@
 			"file": "content.js",
 			"settings":
 			{
+
 				"buffer_size": 10946,
+
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -593,6 +570,7 @@
 					"semi_transient": false,
 					"settings":
 					{
+
 						"buffer_size": 8679,
 						"regions":
 						{
@@ -600,6 +578,7 @@
 						"selection":
 						[
 							[
+
 								4806,
 								4806
 							]
@@ -625,6 +604,7 @@
 					"semi_transient": false,
 					"settings":
 					{
+
 						"buffer_size": 10946,
 						"regions":
 						{
@@ -632,6 +612,7 @@
 						"selection":
 						[
 							[
+
 								1918,
 								1918
 							]
@@ -647,6 +628,7 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
+
 						"translation.y": 333.0,
 						"zoom_level": 1.0
 					},
@@ -678,7 +660,7 @@
 						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
