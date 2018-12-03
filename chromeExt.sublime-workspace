@@ -4,6 +4,7 @@
 		"selected_items":
 		[
 			[
+
 				"c",
 				"console"
 			],
@@ -36,16 +37,8 @@
 				"processing"
 			],
 			[
-				"se",
-				"sendToPopup"
-			],
-			[
 				"b",
 				"brightness()\tfilter"
-			],
-			[
-				"co",
-				"content\tproperty"
 			],
 			[
 				"f",
@@ -371,7 +364,9 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 8345,
+
+				"buffer_size": 8679,
+
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -380,7 +375,9 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 9336,
+
+				"buffer_size": 10946,
+
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -573,15 +570,17 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8345,
+
+						"buffer_size": 8679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3250,
-								3250
+
+								4806,
+								4806
 							]
 						],
 						"settings":
@@ -605,15 +604,17 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9336,
+
+						"buffer_size": 10946,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1044,
-								1044
+
+								1918,
+								1918
 							]
 						],
 						"settings":
@@ -627,10 +628,11 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 509.0,
+
+						"translation.y": 333.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
