@@ -11,6 +11,19 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
+function storageSet(key,prop){
+	chrome.storage.local.set({[key]:prop});
+}
+
+var storage = {};
+
+function storageUpdate(key){
+	chrome.storage.local.get([key], function(result) {
+        storage[key] = result[key];
+        console.log(result)
+        });
+}
+
 
 //Object for process multiply user
 var bodies = {
@@ -371,8 +384,3 @@ function newTab(){
 }
 
 
- chrome.storage.local.set({key1: "value"});
-      
-        chrome.storage.local.get(['key1'], function(result) {
-          console.log('Value currently is ' + result.key);
-        });

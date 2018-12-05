@@ -6,15 +6,19 @@ chrome.runtime.sendMessage({greeting: "popup"}, function(response) {
 
 
 document.querySelector('#buttonOne').onclick = function(is) {
-	chrome.runtime.sendMessage({greeting: "popup",input: "buttonOne",sayHi:"Its popup baby"}, function(response) {
-    console.log(response.farewell);
-    });
+	chrome.runtime.sendMessage({greeting: "popup",input: "buttonOne",sayHi:"Its popup baby"}
+		// , function(response) {
+  //   console.log(response.farewell);
+  //   }
+    );
 };
 document.querySelector('#buttonTwo').onclick = function(is) {
-	chrome.runtime.sendMessage({greeting: "popup",input: "buttonTwo",sayHi:"Its popup baby"}, function(response) {
-    console.log(response.farewell);
-    addLi()
-    });
+	chrome.runtime.sendMessage({greeting: "popup",input: "buttonTwo",sayHi:"Its popup baby"}
+		// , function(response) {
+  //   console.log(response.farewell);
+  //   addLi()
+  //   }
+    );
 };
 
 
