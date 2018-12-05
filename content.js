@@ -29,6 +29,13 @@ function huender(asd){
 //zoom
 document.body.style.zoom = "75%";
 
+
+function storage(){
+	chrome.storage.local.get(['key1'], function(result) {
+          console.log(result.key1);
+        });
+}
+
 //Checker for login form loading
 function checkLoginForm(callback){
 	if (document.getElementById('loginContainer') !== null) {
@@ -58,7 +65,6 @@ function checkLeftBar(callback){
 
 //Activity selection and open quest
 function selectAndLoad(){
-	var count = 1;
 	function clickNc(){
 		if (document.querySelector('[data-item-marker="centerNotification"]') !== null) {
 			if (document.querySelector('[data-item-marker="centerNotification"]').classList[3] !== "t-btn-pressed") {
@@ -69,7 +75,7 @@ function selectAndLoad(){
 				console.log("Clicked")
 				huender("Clicked")
 			}
-			setTimeout(select,2000)
+			setTimeout(select,5000)
 		} else {
 			setTimeout(selectAndLoad,1000)
 			console.log("centerNotification is null")
@@ -78,28 +84,33 @@ function selectAndLoad(){
 	}
 	function select(){
 		console.log("selector there")
-		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length;
-		
+		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList') === null) {
+			console.log("try")
+			setTimeout(select,1000)
+			return
+		}
+		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length === undefined) {
+			console.log("try")
+			setTimeout(select,1000)
+			return
+		}
+		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length === 0) {
+			console.log("try")
+			setTimeout(select,1000)
+			return
+		}
 		if (document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].classList[0] ===  "empty-grid-message") {
 			console.log("No quest")
 			huender("No items to select")
 			return
 		}
-		if (questLength == 0) {
-			if (count == 5) {
-				console.log("No quest")
-				huender("No items to select")
-				return
-			}
-			console.log("try: " + count)
-			count++
-			setTimeout(select,2000)
-		} else {
-			document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
-			document.querySelector('[data-item-marker="centerNotification"]').click()
-			console.log("Select")
-			huender("Selected quest")
-		}
+		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length;
+		console.log(questLength);
+		
+		document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
+		document.querySelector('[data-item-marker="centerNotification"]').click()
+		console.log("Select")
+		huender("Selected quest")
 
 	}
 	setTimeout(clickNc,500);
@@ -299,33 +310,127 @@ function loadQuest(){
 //
 function processDat(){
 	var isLoading = loadSensor();
-	if (isLoading === false) {
-		console.log("go")
+
+	if (isLoading === true) {
+		console.log("is loading true")
+		setTimeout(processDat,1000)
+		return
+	}
+	if (document.querySelector('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap') !== null) {
 		var currentPosition = document.querySelector('#TsiVisitPageStatusComboBoxEdit-el').value;
 		cascadeSelection(currentPosition);
-		return
 	} else {
-		console.log("re try")
-		setTimeout(processDat,2000)
+		console.log("VisitStatusHistoryDetail is null")
+		setTimeout(processDat,1000)
 	}
 
+
 	function cascadeSelection(p){
-		console.log(p);
 		if (p === "Назначена") {
 			console.log("Назначена");
+			var dif = findElTimeDiference(p);
+			console.log(dif)
+			if (dif >= 5) {
+				setTimeout(clickScroller,1000);
+				setTimeout(clickNextStep,2000);
+				setTimeout(done,10000);
+			}
+			function clickScroller(){
+				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickNextStep() {
+				document.querySelector('.listview-scroll > ul > [data-item-marker="Подтверждена"]').click()
+			}
 			return
 		}
 		if (p === "Подтверждена") {
 			console.log("Подтверждена");
+			var dif = findElTimeDiference(p);
+			console.log(dif)
+			if (dif >= 5) {
+				setTimeout(clickScroller,1000);
+				setTimeout(clickNextStep,2000);
+				setTimeout(done,10000);
+			}
+			function clickScroller(){
+				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickNextStep() {
+				document.querySelector('.listview-scroll > ul > [data-item-marker="В пути"]').click()
+			}
 			return
 		}
 		if (p === "В пути") {
 			console.log("В пути");
+			var dif = findElTimeDiference(p);
+			console.log(dif);
+			if (dif >= 5) {
+				setTimeout(clickScroller,1000);
+				setTimeout(clickNextStep,2000);
+				setTimeout(done,10000);
+			}
+			function clickScroller(){
+				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickNextStep() {
+				document.querySelector('.listview-scroll > ul > [data-item-marker="На объекте"]').click()
+			}
 			return
 		}
 		if (p === "На объекте") {
 			console.log("На объекте");
+			var dif = findElTimeDiference(p);
+			console.log(dif)
+			if (dif >= 5) {
+				setTimeout(clickScroller,1000);
+				setTimeout(clickNextStep,2000);
+				setTimeout(clickResCatScroller,3000);
+				setTimeout(clickResCategoryChose,4000);
+				setTimeout(clickWorkCatScroller,5000);
+				setTimeout(clickWorkCategoryChose,6000);
+				setTimeout(done,10000);
+			}
+			function clickScroller(){
+				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickNextStep() {
+				document.querySelector('.listview-scroll > ul > [data-item-marker="Выполнена"]').click()
+			}
+			function clickResCatScroller() {
+				document.querySelector('#TsiVisitPageTsiFFMResCategoryL2ComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickResCategoryChose(){
+				document.querySelector('.listview-scroll > ul > [data-item-marker="Абонентська проводка"]').click()
+			}
+			function clickWorkCatScroller() {
+				document.querySelector('#TsiVisitPageTsiFFMWorkCategoryL2ComboBoxEdit-right-icon-wrapper').click()
+			}
+			function clickWorkCategoryChose(){
+				document.querySelector('.listview-scroll > ul > [data-item-marker="Виконано ремонт"]').click()
+			}
 			return
+		}
+	}
+
+	function done(){
+		huender("All done");
+	}
+
+	function findElTimeDiference(fiText){
+		var visitStatusLength = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div').length
+		for (var i = visitStatusLength - 1; i >= 1; i--) {
+			// var fiText = "Назначена";
+			var currText = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div')[i].querySelectorAll('div > span')[1].innerText
+			console.log(currText)
+			if (fiText === currText) {
+				console.log("Finded")
+				var strOfTime = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div')[i].querySelectorAll('div > span')[2].innerText
+				var timeOfStatus = new Date;
+				var currentTime = new Date;
+				timeOfStatus.setHours(strOfTime[strOfTime.length - 5] + strOfTime[strOfTime.length - 4],strOfTime[strOfTime.length - 2] + strOfTime[strOfTime.length - 1]);
+				var minutesLeft = ((currentTime - timeOfStatus) / 1000 / 60);
+				return minutesLeft
+			}
 		}
 	}
 }
@@ -334,6 +439,9 @@ function processDat(){
 //Msg listener
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+  	if (request.do === "storageTest") {
+  		storage();
+  	}
 
   	if (request.do === "selectAndLoad") {
   		selectAndLoad();
@@ -383,7 +491,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterLogin3,100);
 		}
 		function enterLogin3(){
-			document.querySelector("[data-item-marker=loginEdit]>input").value = "vnikolin";
+			document.querySelector("[data-item-marker=loginEdit]>input").value = "vvitriv";
 			setTimeout(enterPassword,100);
 		}
 		function enterPassword(){
@@ -391,7 +499,7 @@ chrome.runtime.onMessage.addListener(
 			setTimeout(enterPassword2,100);
 		}
 		function enterPassword2(){
-			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Djkjlz#1";
+			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Dfcbkbq1";
 			setTimeout(enterPassword3,100);
 		}
 		function enterPassword3(){

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"load",
+				"loading"
+			],
+			[
+				"n",
+				"null"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"clci",
+				"clickNextStep"
+			],
+			[
+				"click",
+				"clickScroller"
+			],
+			[
+				"fi",
+				"fiText"
+			],
+			[
+				"tim",
+				"timeOfStatus"
+			],
+			[
+				"t",
+				"timeofCurrStatus"
+			],
+			[
 				"re",
 				"return"
 			],
@@ -78,10 +110,6 @@
 			[
 				"f",
 				"filter\tproperty"
-			],
-			[
-				"t",
-				"top\tproperty"
 			],
 			[
 				"text",
@@ -399,7 +427,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 7965,
+				"buffer_size": 8232,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -408,7 +436,7 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 11577,
+				"buffer_size": 15553,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -601,15 +629,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7965,
+						"buffer_size": 8232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5586,
-								5586
+								6238,
+								6238
 							]
 						],
 						"settings":
@@ -621,7 +649,7 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 2160.0,
+						"translation.y": 2912.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -633,15 +661,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11577,
+						"buffer_size": 15553,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8881,
-								8881
+								9343,
+								9343
 							]
 						],
 						"settings":
@@ -652,10 +680,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": false,
-							"wrap_width": 0
+							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 4440.0,
+						"translation.y": 4427.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -683,7 +711,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 1102.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,

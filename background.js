@@ -165,6 +165,9 @@ var centralScript = {
 	processStage:function(){
 		sendToContent("processNow");
 	},
+	storageTest:function(){
+		sendToContent("storageTest");
+	},
 
 	timeouts:[],
 
@@ -260,7 +263,17 @@ chrome.runtime.onMessage.addListener(
 	if (request.sayHi === "Selected quest") {
 		console.log("Received selection")
 		sendToPopup("Received selection, go processing")
-		centralScript.timeouts.push( setTimeout(centralScript.processStage,2000) )
+		centralScript.timeouts.push( setTimeout(centralScript.processStage,5000) )
+	}
+
+	if (request.sayHi === "All done") {
+		console.log("Received confirmation")
+		sendToPopup("Received confirmation")
+		cyclePosition = 0;
+		chrome.tabs.remove(tabId);
+		cyclePosition = 0;
+		sendToPopup("Stop dat shit baby");
+		setTimeout(centralScript.start,5000);
 	}
 
 	});
@@ -356,3 +369,10 @@ function newTab(){
 		tabId = tab;
 	}); 
 }
+
+
+ chrome.storage.local.set({key1: "value"});
+      
+        chrome.storage.local.get(['key1'], function(result) {
+          console.log('Value currently is ' + result.key);
+        });
