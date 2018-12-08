@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Puhuhu</title>
-<!-- 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	<link rel="stylesheet" href="popup.css">
 	<link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
 <body>
@@ -13,12 +14,86 @@
 	<div class="container">
 		<div class="img">	
 		</div>
-		<div class="controls">
+		<div class="hud-container">
+			<div class="header">
+				<img src="img/PuhulizerMod.png" alt="">
+			</div>
+			<div class="pos-bar">
+				<p>Start</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Wait fo tabs</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Autorization</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Wait fo load</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Select stage</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Processing</p>
+				<img src="img/rectangle.png" alt="">
+				<p>Complete</p>
+			</div>
+			<div class="positionline">
+				<div class="line">
+				</div>
+				<div class="line">
+					<div class="cycle">70%</div>
+				</div>
+			</div>
+			<div class="button-bar">
+				<button id="buttonOne">Start</button>
+				<button id="buttonTwo">Stop</button>
+				<button id="buttontree">Setup</button>
+			</div>
+
+			<div class="params">
+				<button id="params-hide">Hide</button>
+				<div class="users">
+					<form>
+					  <input type="checkbox" id="myCheck"  onclick="myFunction()">
+					  <input name="firstname" type="text">
+					  <input name="firstname" type="password">
+					   <select name="cars">
+					    <option value="volvo">Volvo</option>
+					    <option value="saab">Saab</option>
+					    <option value="fiat">Fiat</option>
+					    <option value="audi">Audi</option>
+					  </select>
+					  <select name="cars">
+					    <option value="volvo">Volvo</option>
+					    <option value="saab">Saab</option>
+					    <option value="fiat">Fiat</option>
+					    <option value="audi">Audi</option>
+					  </select>
+					  <input type="reset">
+					</form>
+					<form>
+					  <input type="checkbox" id="myCheck"  onclick="myFunction()">
+					  <input name="firstname" type="text">
+					  <input name="firstname" type="password">
+					   <select name="cars">
+					    <option value="volvo">Volvo</option>
+					    <option value="saab">Saab</option>
+					    <option value="fiat">Fiat</option>
+					    <option value="audi">Audi</option>
+					  </select>
+					  <select name="cars">
+					    <option value="volvo">Volvo</option>
+					    <option value="saab">Saab</option>
+					    <option value="fiat">Fiat</option>
+					    <option value="audi">Audi</option>
+					  </select>
+					  <input type="reset">
+					</form>
+				</div>
+			</div>
+
+		</div>
+	<!-- 	<div class="controls">
 			<button id="buttonOne">RUN </button>
 			<button id="buttonTwo">STOP</button>
 			<div class="positionline">
 				<div class="line">
-					<!-- <div class="cycle"></div> -->
 				</div>
 				<div class="line">
 					<div class="cycle">70%</div>
@@ -30,15 +105,16 @@
 					<li>Current body: vkomelkov</li>
 				</div>
 			</div>
-		</div>
-		<div class="consoleLayer"></div>
+		</div> -->
+		<!-- <div class="consoleLayer"></div> -->
 		<div class="console">
 				<ul>
 					<li>Fakinshit001</li>
 				</ul>
 		</div>
-	</div>
 
+	</div>
+	<footer>v1.22 ffm.ukrtelecom.net <br>digiborimusik@gmail.com<br>Версия для ознакомления </footer>
 	
 </body>
 <script src="popup.js"></script>

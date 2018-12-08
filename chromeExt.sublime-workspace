@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"result"
+			],
+			[
+				"s",
+				"storageReturn"
+			],
+			[
+				"a",
+				"alls"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"storage",
+				"storageGet"
+			],
+			[
+				"se",
+				"sendToContent"
+			],
+			[
+				"st",
+				"storage"
+			],
+			[
 				"load",
 				"loading"
 			],
@@ -36,10 +64,6 @@
 				"timeofCurrStatus"
 			],
 			[
-				"re",
-				"return"
-			],
-			[
 				"pro",
 				"processDat"
 			],
@@ -70,10 +94,6 @@
 			[
 				"select",
 				"selectAndLoad"
-			],
-			[
-				"se",
-				"sendToContent"
 			],
 			[
 				"c",
@@ -116,16 +136,8 @@
 				"text-shadow\tproperty"
 			],
 			[
-				"a",
-				"auto"
-			],
-			[
 				"fle",
 				"flex-start\tjustify-content"
-			],
-			[
-				"s",
-				"space-around\tjustify-content"
 			],
 			[
 				"tra",
@@ -427,7 +439,7 @@
 			"file": "background.js",
 			"settings":
 			{
-				"buffer_size": 8232,
+				"buffer_size": 8550,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -436,7 +448,7 @@
 			"file": "content.js",
 			"settings":
 			{
-				"buffer_size": 15553,
+				"buffer_size": 15739,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -445,8 +457,16 @@
 			"file": "popup.js",
 			"settings":
 			{
-				"buffer_size": 2347,
+				"buffer_size": 2396,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "popup.css",
+			"settings":
+			{
+				"buffer_size": 7642,
 				"line_ending": "Windows"
 			}
 		}
@@ -503,8 +523,9 @@
 	],
 	"file_history":
 	[
-		"/C/Users/User/Desktop/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/index.html",
+		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod/popup.html",
 		"/C/Users/User/Desktop/webdev/chrome extensions/PuhulizerMod/manifest.json",
+		"/C/Users/User/Desktop/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/index.html",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/popup.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/content.js",
 		"/C/Users/User/Desktop/webdev/chrome extensions/Bpm'onlinePuhuhulizerMod/background.js",
@@ -620,7 +641,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -629,15 +650,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8232,
+						"buffer_size": 8550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6238,
-								6238
+								3664,
+								3664
 							]
 						],
 						"settings":
@@ -649,10 +670,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 2912.0,
+						"translation.y": 2160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -661,15 +682,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15553,
+						"buffer_size": 15739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9343,
-								9343
+								13433,
+								13444
 							]
 						],
 						"settings":
@@ -683,10 +704,10 @@
 							"wrap_width": 120
 						},
 						"translation.x": 0.0,
-						"translation.y": 4427.0,
+						"translation.y": 6427.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -695,15 +716,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2347,
+						"buffer_size": 2396,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								393,
+								393
 							]
 						],
 						"settings":
@@ -711,10 +732,40 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1102.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "popup.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1575.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

@@ -1,8 +1,8 @@
 console.log("Im a Popup babys!");
 
-chrome.runtime.sendMessage({greeting: "popup"}, function(response) {
-  console.log(response.farewell);
-});
+// chrome.runtime.sendMessage({greeting: "popup"}
+
+// );
 
 
 document.querySelector('#buttonOne').onclick = function(is) {
@@ -20,6 +20,16 @@ document.querySelector('#buttonTwo').onclick = function(is) {
   //   }
     );
 };
+document.querySelector('#buttontree').onclick = function(is) {
+	console.log('tree')
+	document.querySelector('.params').style.left = "10vw";
+};
+
+document.querySelector('#params-hide').onclick = function(is) {
+	console.log('tree')
+	document.querySelector('.params').style.left = "100vw";
+};
+
 
 
 function addLi(text){
@@ -45,9 +55,9 @@ function addLi(text){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     addLi(request.sayHi);
-    if (request.status !== undefined){
-    	document.getElementById("status").innerText = "Status: " + request.status;
-    }
+    // if (request.status !== undefined){
+    // 	document.getElementById("status").innerText = "Status: " + request.status;
+    // }
     if (request.counter !== undefined) {
     	progressBar(request.counter);
     }
