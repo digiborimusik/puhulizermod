@@ -171,17 +171,190 @@ body {
   width: 80vw;
   height: 80vh;
   position: absolute;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.8);
   top: 10vh;
   left: 100vw;
   transition: 0.15s left cubic-bezier(0,.84,.65,1.07);
 }
 
-.params button {
+.controls {
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,0.1);
+  width: 100%; 
+  display: flex; 
+
+}
+
+.params form {
+  background: rgba(0,0,0,0.06);
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  width: 96%;
   position: relative;
-  left: -20px;
-  top: 40vh;
-  height: 30px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.check {
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+/*  top: 0px;
+  left: 3px;*/
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+
+}
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: rgba(0,255,255,0.4);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #222;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+.check:hover:before {
+  opacity: 1;
+}
+.check:hover svg {
+  stroke: #222;
+}
+
+
+#cbx1:checked + .check svg {
+  stroke: #222;
+}
+#cbx1:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx1:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+#cbx2:checked + .check svg {
+  stroke: #222;
+}
+#cbx2:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx2:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+#cbx3:checked + .check svg {
+  stroke: #222;
+}
+#cbx3:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx3:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+#cbx4:checked + .check svg {
+  stroke: #222;
+}
+#cbx4:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx4:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+#cbx5:checked + .check svg {
+  stroke: #222;
+}
+#cbx5:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx5:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+
+.input-text {
+  background: #fff;
+  outline: none;
+  border: 2px solid #222;
+  border-radius: 5px;
+  width: 100px;
+  height: 18px;
+  width: 75px;
+  padding: 2px;
+  font-family: 'Open Sans', sans-serif;
+  background: rgba(0,255,255,0.4);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.input-text:disabled {
+  background: rgba(0,0,0,0.4);
+}
+
+form .select {
+  border: 2px solid #222;
+  width: 60px;
+  height: 26px;
+  outline: none;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  background: rgba(0,255,255,0.4);
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.6em;
+  position: relative;
+  margin-left: 10px;
+}
+
+form .button {
+  height: 26px;
   width: 75px;
   font-size: 0.8em;
   background: rgba(0,0,0,0.1);
@@ -193,23 +366,16 @@ body {
   transition: 0.1s background ease-out; 
   font-weight: 600;
   letter-spacing: 1px;
-  transform: rotate(-90deg);
   z-index: 20;
   opacity: 1;
+  margin-left: 10px;
 }
-.params button:active {
+form .button:active {
   background: #222;
   color: #fff;
 }
 
-.controls {
-  position: absolute;
-  top: 0;
-  background: rgba(0,0,0,0.1);
-  width: 100%; 
-  display: flex; 
 
-}
 .controls button {
   color: #fff;
   cursor: pointer;
