@@ -27,6 +27,7 @@ document.querySelector('#buttontree').onclick = function(is) {
 	function doThat(){
 		document.querySelector('.params').style.left = "10vw";
 	}
+	loadData()
 };
 
 
@@ -98,6 +99,15 @@ function reloadData(){
 		document.querySelectorAll('form')[i].querySelectorAll('.input-text')[1].value = storage.user[i].pass;
 		document.querySelectorAll('form')[i].querySelectorAll('select')[0].value = storage.user[i].cat1;
 		document.querySelectorAll('form')[i].querySelectorAll('select')[0].value = storage.user[i].cat2;
+
+		document.querySelectorAll('div > input')[0].value = storage.user[5]
+		document.querySelectorAll('.rangeview')[0].innerText = storage.user[5]
+
+		document.querySelectorAll('div > input')[1].value = storage.user[6]
+		document.querySelectorAll('.rangeview')[1].innerText = storage.user[6]
+
+		document.querySelectorAll('div > input')[2].value = storage.user[7]
+		document.querySelectorAll('.rangeview')[2].innerText = storage.user[7]
 		if (storage.user[i].checkd) {
 			console.log(i)
 			document.querySelectorAll('form')[i].querySelectorAll('.input-text')[0].disabled = false
@@ -114,7 +124,10 @@ storage = {
 		1:{},
 		2:{},
 		3:{},
-		4:{}
+		4:{},
+		5:{},
+		6:{},
+		7:{},
 	}
 };
 
@@ -136,8 +149,27 @@ function saveData(){
 }
 function loadData(){
 	storageUpdate("user");
-	setTimeout(reloadData,1000)
+	setTimeout(reloadData,400)
 }
+
+document.querySelectorAll('.slider')[0].addEventListener("change",function(){
+	var value = document.querySelectorAll('div > input')[0].value;
+	document.querySelectorAll('.rangeview')[0].innerText = value;
+	storage.user[5] = value;
+});
+document.querySelectorAll('.slider')[1].addEventListener("change",function(){
+	var value = document.querySelectorAll('div > input')[1].value;
+	document.querySelectorAll('.rangeview')[1].innerText = value;
+	storage.user[6] = value;
+});
+document.querySelectorAll('.slider')[2].addEventListener("change",function(){
+	var value = document.querySelectorAll('div > input')[2].value;
+	document.querySelectorAll('.rangeview')[2].innerText = value;
+	storage.user[7] = value;
+});
+
+
+
 
 function addLi(text){
 	var node = document.createElement("LI");

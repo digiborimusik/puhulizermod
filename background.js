@@ -85,8 +85,8 @@ var centralScript = {
 		"url": "popup.html",
 		"type": "normal",
 		"focused": true,
-		"width": 700,
-		"height": 500
+		"width": 1000,
+		"height": 563
 		}, function (popup) {
 		popupId = popup.id;
 
@@ -304,8 +304,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		"url": "popup.html",
 		"type": "normal",
 		"focused": true,
-		"width": 700,
-		"height": 500
+		"width": 900,
+		"height": 580
 	}, function (popup) {
 		popupId = popup.id;
 	}); 
