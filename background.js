@@ -10,70 +10,75 @@ var popupone;
 var lastFocused;
 var tabId;
 var cyclePosition = 0;
+var personPos = 0;
+
+
+//Local storage manage
 
 function storageSet(key,prop){
 	chrome.storage.local.set({[key]:prop});
 }
 
-var storage = {};
-
 function storageUpdate(key){
 	chrome.storage.local.get([key], function(result) {
-        storage[key] = result[key];
+        storage = result[key];
         console.log(result)
         });
 }
 
+var storage = {};
 
-//Object for process multiply user
-var bodies = {
+function storageTest(){
+	storageUpdate('user');
+	setTimeout(checkStFunc,100);
+	function checkStFunc(){
+		if (storage.user === undefined) {
+			console.log("storage empty")
+			storage = {
+				user:{
+					0:{cat1: "volvo", cat2: "volvo", checkd: true, login: "ivan", pass: "titan"},
+					1:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+					2:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+					3:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+					4:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+					5:6,
+					6:6,
+					7:6,
+					8:0
+				}
+			};
+			storageSet("user",storage)
 
-	//construct new position
-	addBody:function(login,password){
-	let undefBody = this.forUndef();
-	if (undefBody === undefined){
-		console.log("Out of slots");
-		return
-	};
-	this[undefBody] = new function(){
-		this.login = login;
-		this.password = password;
-	};
-	},
+		} else {
+			console.log("storage empty'nt")
 
-	//current positions
-	body1:{
-	login:"vkomelkov",
-	password:"1"
-	},
-	body2:{
-	login:"VPasichnik",
-	password:"1"
-	},
-
-	//Return first undefined position
-	forUndef:function(){
-	for (i = 1; i <= 5; i++) {
-	var arg = "body" + i;
-		if (this[arg] === undefined){
-		return arg
 		}
 	}
-	}
-};
+}
+
+storageTest();
 
 
+
+
+//Main logic
 
 var centralScript = {
 
-	start: function(){
+	start: function(n){
 	if (cyclePosition !== 0) {
 		setTimeout(sendToPopup,1000,"Already started baby");
 		return
 	}
+	if (n !== undefined) {
+		console.log("new iteration")
+		storage.user[8] = 0;
+		storageSet("user",storage);
+	}
 	cyclePosition = "Started";
 	setTimeout(sendToPopup,1000,"Haters gona hate vladislove gona loved");
-	this.timeouts.push( setTimeout(this.openUrl,500) );
+	centralScript.timeouts.push( setTimeout(centralScript.openUrl,500) );
+	setTimeout(storageUpdate,100,"user");
 	},
 
 	openUrl: function(){
@@ -142,12 +147,21 @@ var centralScript = {
 	goTryLogin: function (){
 	cyclePosition = "Try to autorize";
 	sendToPopup("Send autorization data to content script")
-	sendToContent("sendAuzData",{login:"vkomelkov",password:"1"},)
-	setTimeout(focusWin,1000);
-	setTimeout(contentFocus,1000);
+	var qwe = storage.user[storage.user[8]].checkd;
+	if (qwe === false) {
+		if (storage.user[8] === 4) {
+			storage.user[8] = 0;
+			console.log("personPos 0" + storage.user[8]);
+		} else {
+			storage.user[8]++
+			console.log("personPos ++" + storage.user[8]);	
+		}
+		centralScript.timeouts.push( setTimeout(centralScript.goTryLogin,400) );
+		return
+	}
+	storageSet("user",storage);
+	console.log(storage.user[8]);
 	setTimeout(sendToContent,2000,"btnLogin");
-	setTimeout(popupFocus,3500);
-	setTimeout(focusLast,3600);
 	sendToPopup("Strap in",4000);
 	centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,4000) );
 	},
@@ -161,7 +175,7 @@ var centralScript = {
 		centralScript.timeouts.push( setTimeout(centralScript.selectAndLoad,2000) );
 		return
 		}
-		sendToPopup("Loadn't",5000)
+		sendToPopup("Loadn't",500)
 		centralScript.timeouts.push( setTimeout(centralScript.w84loadLeftBar,5000) );
 	})
 	},
@@ -172,11 +186,14 @@ var centralScript = {
 		sendToContent("selectAndLoad","bitch");
 		sendToPopup("selectAndLoad function start",500);
 		cyclePosition = "Select and load";
+		setTimeout(focusLast,1000);
 
 	},
 
 	processStage:function(){
 		sendToContent("processNow");
+		setTimeout(focusWin,100);
+		setTimeout(focusLast,3000);
 	},
 	storageTest:function(){
 		sendToContent("storageTest");
@@ -189,7 +206,7 @@ var centralScript = {
 
 //Sender
 function sendToContent(comand,sayHi,callback){
-	chrome.tabs.sendMessage(contentId, {
+	chrome.tabs.sendMessage(tabId, {
 		greeting: "bgScript",
 		do:comand,
 		sayHi:sayHi
@@ -249,27 +266,63 @@ chrome.runtime.onMessage.addListener(
 		console.log("Bottom one clicked");
 		sendToPopup("Received button one click by background script");
 		// sendResponse({farewell:"Yea clicked buttonOne"});
-		centralScript.start();
+		centralScript.start("new");
 		break;
 		case "buttonTwo":
 		console.log("Bottom two clicked");
 		sendToPopup("Received button two click by background script")
 		// sendResponse({farewell:"Yea clicked buttonOne"});
 		if (cyclePosition === 0 ) {
-		setTimeout(sendToPopup,1000,"Not runnin")
-		return
+			setTimeout(sendToPopup,1000,"Not runnin")
+				for (var i = 0; i < centralScript.timeouts.length; i++) {
+					clearTimeout(centralScript.timeouts[i]);
+				};
+			centralScript.timeouts = [];
+			return
 		};
-		cyclePosition = 0;
 		chrome.tabs.remove(tabId);
 		cyclePosition = 0;
 		sendToPopup("Stop dat shit baby");
+		break;
+		case "dataUpdate":
+		setTimeout(storageUpdate,1000,"user")
 		break;
 	};
 
 	//Loadquest script ending false
 	if (request.sayHi === "No items to select") {
 		console.log("loadquest done")
+		sendToPopup("Out of quests")
 		chrome.tabs.remove(tabId)
+		
+		if (storage.user[8] === 4) {
+			storage.user[8] = 0;
+			console.log("personPos 0");
+		} else {
+			storage.user[8]++
+			console.log("personPos ++");	
+		};
+		storageSet("user",storage);
+
+		setTimeout(restart,100)
+	}
+
+	//wrong ligon data
+	if (request.sayHi === "wrong data") {
+		console.log("loadquest done")
+		sendToPopup("Wrong data no bueno, check login or password on slot: " + (storage.user[8] + 1))
+		chrome.tabs.remove(tabId)
+		
+		if (storage.user[8] === 4) {
+			storage.user[8] = 0;
+			console.log("personPos 0 wrong" + storage.user[8]);
+		} else {
+			storage.user[8]++
+			console.log("personPos ++ wrong" + storage.user[8]);	
+		};
+		storageSet("user",storage);
+
+		setTimeout(restart,100)
 	}
 
 	//Loadquest script ending true  
@@ -286,10 +339,81 @@ chrome.runtime.onMessage.addListener(
 		chrome.tabs.remove(tabId);
 		cyclePosition = 0;
 		sendToPopup("Stop dat shit baby");
-		setTimeout(centralScript.start,5000);
+		
+		if (storage.user[8] === 4) {
+			storage.user[8] = 0;
+			console.log("personPos 0");
+		} else {
+			storage.user[8]++
+			console.log("personPos ++");	
+		};
+		storageSet("user",storage);
+
+		setTimeout(restart,100)
+	}
+	function restart(){
+		centralScript.timeouts.push( setTimeout(centralScript.start,5000) )
+	}
+
+
+	//Window and tab listeners from cs
+	
+	if (request.sayHi === "focusWin") {
+		focusWin()
+	}
+	if (request.sayHi === "focusLast") {
+		focusLast()
+	}
+	if (request.sayHi === "contentFocus") {
+		contentFocus()
+	}
+	if (request.sayHi === "popupFocus") {
+		popupFocus()
+	}
+
+	if (request.sayHi === "failsafe") {
+		console.log("Received failsafe")
+		sendToPopup("Received failsafe")
+		cyclePosition = 0;
+		chrome.tabs.remove(tabId);
+		cyclePosition = 0;
+		sendToPopup("Stop dat shit baby");
+		
+		if (storage.user[8] === 4) {
+			storage.user[8] = 0;
+			console.log("personPos 0");
+		} else {
+			storage.user[8]++
+			console.log("personPos ++");	
+		};
+		storageSet("user",storage);
+
+		setTimeout(restart,100)	
 	}
 
 	});
+
+
+
+function focusWin(){
+	chrome.windows.getCurrent({},function(page){
+	lastFocused = page.id;
+	console.log(page.id)
+	});
+	chrome.windows.update(popupId, { "focused": true });
+	// setTimeout(focusLast,1000);
+}
+function focusLast(){
+	chrome.windows.update(lastFocused, { "focused": true });
+}
+
+function contentFocus(){
+	chrome.tabs.update(tabId, { "active": true })
+}
+
+function popupFocus(){
+	chrome.tabs.update(popupTabId, { "active": true })
+}
 
 
 
@@ -342,6 +466,7 @@ chrome.tabs.onRemoved.addListener(function(windowId) {
 	sendToPopup("Tab closed at position " + cyclePosition);
 	cyclePosition = 0;
 	sendToPopup("Clear tiomeouts");
+	console.log(centralScript.timeouts)
 	for (var i = 0; i < centralScript.timeouts.length; i++) {
 		clearTimeout(centralScript.timeouts[i]);
 		};
@@ -350,27 +475,6 @@ chrome.tabs.onRemoved.addListener(function(windowId) {
 });
 
 
-
-
-function focusWin(){
-	chrome.windows.getCurrent({},function(page){
-	lastFocused = page.id;
-	console.log(page.id)
-	});
-	chrome.windows.update(popupId, { "focused": true });
-	// setTimeout(focusLast,1000);
-}
-function focusLast(){
-	chrome.windows.update(lastFocused, { "focused": true });
-}
-
-function contentFocus(){
-	chrome.tabs.update(tabId, { "active": true })
-}
-
-function popupFocus(){
-	chrome.tabs.update(popupTabId, { "active": true })
-}
 
 
 function newTab(){

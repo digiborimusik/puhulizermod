@@ -17,6 +17,12 @@ function loadSensor(){
 
 //Self invocation by msg
 chrome.runtime.sendMessage({greeting: "content", sayHi: "Content script there!!"});
+setTimeout(fail,120000);
+
+function fail(){
+	console.log("failsafe")
+	huender("failsafe")
+};
 
 //setup sender
 function huender(asd){
@@ -479,48 +485,121 @@ chrome.runtime.onMessage.addListener(
 		huender("Received autorization data for user " + auzData.login);
 	}
 	if (request.do === "btnLogin") {
+		var counter = 0;
+		storageUpdate("user");
 		function enterLogin(){
 			document.activeElement.blur();
 			document.querySelector("[data-item-marker=loginEdit]>input").focus();
+			huender("focusWin");
+			huender("contentFocus");
 			setTimeout(enterLogin2,100);
 		}
 		
 		function enterLogin2(){
 			document.querySelector("[data-item-marker=loginEdit]>input").blur();
-			var elementEsg = document.querySelector("[data-item-marker=passwordEdit]>input");
+			huender("focusLast");
 			setTimeout(enterLogin3,100);
 		}
 		function enterLogin3(){
-			document.querySelector("[data-item-marker=loginEdit]>input").value = "vvitriv";
+			huender("focusWin");
+			huender("contentFocus");
+			var qwe = storage.user[storage.user[8]].login
+			console.log(qwe);
+			document.querySelector("[data-item-marker=loginEdit]>input").value = qwe;
 			setTimeout(enterPassword,100);
 		}
 		function enterPassword(){
+			huender("focusLast");
 			document.querySelector("[data-item-marker=passwordEdit]>input").focus();
 			setTimeout(enterPassword2,100);
 		}
 		function enterPassword2(){
-			document.querySelector("[data-item-marker=passwordEdit]>input").value = "Dfcbkbq1";
+			huender("focusWin");
+			huender("contentFocus");
+			var qwe = storage.user[storage.user[8]].pass
+			console.log(qwe);
+			document.querySelector("[data-item-marker=passwordEdit]>input").value = qwe;
 			setTimeout(enterPassword3,100);
 		}
 		function enterPassword3(){
+			huender("focusLast");
 			document.querySelector("[data-item-marker=passwordEdit]>input").blur();
 			setTimeout(bpmLoginClick,100);
 		}
 		
 		function bpmLoginClick(){
+			huender("focusWin");
+			huender("contentFocus");
 			document.activeElement.blur();
 			document.querySelector("[data-item-marker=btnLogin]").focus();
 			setTimeout(bpmLoginClick2,100);
 		}
 		function bpmLoginClick2(){
+			huender("focusLast");
 			document.activeElement.blur();
 			document.querySelector("[data-item-marker=btnLogin]").focus();
 			setTimeout(bpmLoginClick3,100);
 		}
 		function bpmLoginClick3(){
+			huender("focusWin");
+			huender("contentFocus");
 			document.querySelector("[data-item-marker=btnLogin]").click();
+			setTimeout(checker,200);
+		}
+		function checker(){
+			if (document.querySelector('#t-comp0-caption') !== null) {
+				console.log("Wrong data");
+				huender("wrong data");
+				huender("focusLast");
+				return
+			}
+			if (document.querySelector('#loginEdit-validation').style.visibility !== "hidden" || document.querySelector('#passwordEdit-validation').style.visibility !== "hidden") {
+				if (counter >= 5) {
+					huender("wrong data");
+					huender("focusLast");
+					return
+				}
+				huender("focusLast");
+				enterLogin();
+				counter++
+				console.log(counter)
+				return
+				
+			}
+			afterclick()
+		}
+		function afterclick(){
+			huender("popupFocus");
+			huender("focusLast");
 		}
 		enterLogin();
 	}
   });
 
+
+
+if (request.sayHi === "focusWin") {
+		focusWin()
+	}
+	if (request.sayHi === "focusLast") {
+		focusLast()
+	}
+	if (request.sayHi === "contentFocus") {
+		contentFocus()
+	}
+	if (request.sayHi === "popupFocus") {
+		popupFocus()
+	}
+
+function storageSet(key,prop){
+	chrome.storage.local.set({[key]:prop});
+}
+
+function storageUpdate(key){
+	chrome.storage.local.get([key], function(result) {
+        storage = result[key];
+        console.log(result)
+        });
+}
+
+var storage = {};

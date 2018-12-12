@@ -40,8 +40,10 @@ document.addEventListener("click", function(){
     	dd = event.path[event.path.length - 7].className
     }
     var dds = document.querySelector('.params').style.left;
-    if (dd !== "params" && dds === "10vw" || dd === undefined ) {
+    if (dd !== "params" && dds === "10vw" || dd === undefined && dds === "10vw") {
     	document.querySelector('.params').style.left = "100vw";
+    	collectData();
+    	saveData();
     }
     var a = event.path[0].id.slice(0,3);
     if (a === "cbx") {
@@ -114,22 +116,28 @@ function reloadData(){
 			document.querySelectorAll('form')[i].querySelectorAll('.input-text')[1].disabled = false
         	document.querySelectorAll('form')[i].querySelectorAll('select')[0].disabled = false
         	document.querySelectorAll('form')[i].querySelectorAll('select')[1].disabled = false
+		} else {
+			document.querySelectorAll('form')[i].querySelectorAll('.input-text')[0].disabled = true
+			document.querySelectorAll('form')[i].querySelectorAll('.input-text')[1].disabled = true
+        	document.querySelectorAll('form')[i].querySelectorAll('select')[0].disabled = true
+        	document.querySelectorAll('form')[i].querySelectorAll('select')[1].disabled = true
 		}
 	}
 }
 
-storage = {
-	user:{
-		0:{},
-		1:{},
-		2:{},
-		3:{},
-		4:{},
-		5:{},
-		6:{},
-		7:{},
-	}
-};
+// storage = {
+// 	user:{
+// 		0:{cat1: "volvo", cat2: "volvo", checkd: true, login: "ivan", pass: "titan"},
+// 		1:{cat1: "volvo", cat2: "volvo", checkd: true, login: "sd", pass: "123"},
+// 		2:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+// 		3:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+// 		4:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+// 		5:6,
+// 		6:6,
+// 		7:6,
+// 		8:0
+// 	}
+// };
 
 function storageSet(key,prop){
 	chrome.storage.local.set({[key]:prop});
@@ -144,8 +152,8 @@ function storageUpdate(key){
 }
 
 function saveData(){
-	collectData();
 	storageSet("user",storage);
+	chrome.runtime.sendMessage({greeting: "popup",input: "dataUpdate",sayHi:"Its popup baby"});
 }
 function loadData(){
 	storageUpdate("user");
@@ -216,6 +224,7 @@ function progressBar(time){
 			if (counter === 0) {
 				clearInterval(countdown);
 				document.querySelector('.line:nth-child(2)').style.width = "0%";
+				document.querySelector('.line:nth-child(2) > div').innerText = "</bitch>";
 				console.log("clear");
 			};
 
