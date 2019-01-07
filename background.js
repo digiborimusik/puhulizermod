@@ -10,7 +10,6 @@ var popupone;
 var lastFocused;
 var tabId;
 var cyclePosition = 0;
-var personPos = 0;
 
 
 //Local storage manage
@@ -32,7 +31,7 @@ function storageTest(){
 	storageUpdate('user');
 	setTimeout(checkStFunc,100);
 	function checkStFunc(){
-		if (storage.user === undefined) {
+		if (storage === undefined || storage.user === undefined) {
 			console.log("storage empty")
 			storage = {
 				user:{
@@ -75,14 +74,13 @@ var centralScript = {
 		storage.user[8] = 0;
 		storageSet("user",storage);
 	}
-	cyclePosition = "Started";
+	cyclePosition = 1;
 	setTimeout(sendToPopup,1000,"Haters gona hate vladislove gona loved");
 	centralScript.timeouts.push( setTimeout(centralScript.openUrl,500) );
 	setTimeout(storageUpdate,100,"user");
 	},
 
 	openUrl: function(){
-	cyclePosition = "Open phantom tab";
 	sendToPopup("Open phantom tab",500);
 	//check popup panel closion
 	if (typeof popupId === "undefined"){
@@ -120,7 +118,7 @@ var centralScript = {
 	},
 
 	w84ContentScript:function(){
-	cyclePosition = "wait fo content";
+	cyclePosition = 2;
 	if (contentId === undefined) {
 		centralScript.timeouts.push( setTimeout(centralScript.w84ContentScript,3000) );
 		sendToPopup("Content not loaded, send nudes",3000);
@@ -145,7 +143,7 @@ var centralScript = {
 	},
 
 	goTryLogin: function (){
-	cyclePosition = "Try to autorize";
+	cyclePosition = 3;
 	sendToPopup("Send autorization data to content script")
 	var qwe = storage.user[storage.user[8]].checkd;
 	if (qwe === false) {
@@ -167,7 +165,7 @@ var centralScript = {
 	},
 
 	w84loadLeftBar: function(){
-	cyclePosition = "Wait fo load left bar";
+	cyclePosition = 4;
 	sendToPopup("Send request",10);
 	sendToContent("checkLeftBar","bitches",function(answer){
 		if (answer === "loaded") {
@@ -181,22 +179,21 @@ var centralScript = {
 	},
 
 	selectAndLoad:function(){
+		cyclePosition = 5;
 		setTimeout(focusWin,100);
 		setTimeout(contentFocus,100);
 		sendToContent("selectAndLoad","bitch");
 		sendToPopup("selectAndLoad function start",500);
-		cyclePosition = "Select and load";
 		setTimeout(focusLast,1000);
 
 	},
 
 	processStage:function(){
+		cyclePosition = 6;
+		sendToPopup("processing",3000)
 		sendToContent("processNow");
 		setTimeout(focusWin,100);
 		setTimeout(focusLast,3000);
-	},
-	storageTest:function(){
-		sendToContent("storageTest");
 	},
 
 	timeouts:[],

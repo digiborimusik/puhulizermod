@@ -36,12 +36,6 @@ function huender(asd){
 document.body.style.zoom = "75%";
 
 
-function storage(){
-	chrome.storage.local.get(['key1'], function(result) {
-          console.log(result.key1);
-        });
-}
-
 //Checker for login form loading
 function checkLoginForm(callback){
 	if (document.getElementById('loginContainer') !== null) {
@@ -445,9 +439,7 @@ function processDat(){
 //Msg listener
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-  	if (request.do === "storageTest") {
-  		storage();
-  	}
+
 
   	if (request.do === "selectAndLoad") {
   		selectAndLoad();

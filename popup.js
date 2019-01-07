@@ -201,10 +201,35 @@ function addLi(text){
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+  	switch(request.sayHi){
+  		case "focusWin":
+  		return
+  		case "focusLast":
+  		return
+  		case "contentFocus":
+  		return
+  		case "popupFocus":
+  		return
+  	}
     addLi(request.sayHi);
-    // if (request.status !== undefined){
-    // 	document.getElementById("status").innerText = "Status: " + request.status;
-    // }
+    if (request.status !== undefined){
+    	console.log(request.status)
+    	if (request.status === 1) {
+    		document.querySelectorAll('.pos-bar > p')[request.status - 1].style.opacity = 1;
+    		document.querySelectorAll('.pos-bar > p')[request.status - 1].style.textDecoration = "underline";
+    	} else if (request.status === 0) {
+    		for (var i = 5; i >= 0; i--) {
+    			document.querySelectorAll('.pos-bar > p')[i].style.opacity = 0.5;
+    			document.querySelectorAll('.pos-bar > p')[i].style.textDecoration = "none";
+    		}
+    	} else {
+    		document.querySelectorAll('.pos-bar > p')[request.status - 2].style.opacity = 0.5;
+    		document.querySelectorAll('.pos-bar > p')[request.status - 2].style.textDecoration = "none";
+    		document.querySelectorAll('.pos-bar > p')[request.status - 1].style.opacity = 1;
+    		document.querySelectorAll('.pos-bar > p')[request.status - 1].style.textDecoration = "underline";
+    	}
+
+    }
     if (request.counter !== undefined) {
     	progressBar(request.counter);
     }
@@ -216,7 +241,7 @@ function progressBar(time){
 		function(){
 			counter -= 10;
 			var percent = 100 - (counter / (time / 100));
-			console.log(percent);
+			// console.log(percent);
 			document.querySelector('.line:nth-child(2)').style.width = percent + "%";
 			document.querySelector('.line:nth-child(2) > div').innerText =  Math.floor(percent) + "%";
 			// document.querySelector('.cycle').style.left = percent + "%";
@@ -224,7 +249,7 @@ function progressBar(time){
 			if (counter === 0) {
 				clearInterval(countdown);
 				document.querySelector('.line:nth-child(2)').style.width = "0%";
-				document.querySelector('.line:nth-child(2) > div').innerText = "</bitch>";
+				document.querySelector('.line:nth-child(2) > div').innerText = "";
 				console.log("clear");
 			};
 
