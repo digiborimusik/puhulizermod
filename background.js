@@ -11,6 +11,7 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
+//change1
 
 //Local storage manage
 
