@@ -89,7 +89,7 @@ function collectData(){
 		storage.user[i].pass = pass;
 		var cat1 = document.querySelectorAll('form')[i].querySelectorAll('select')[0].value;
 		storage.user[i].cat1 = cat1;
-		var cat2 = document.querySelectorAll('form')[i].querySelectorAll('select')[0].value;
+		var cat2 = document.querySelectorAll('form')[i].querySelectorAll('select')[1].value;
 		storage.user[i].cat2 = cat2;
 	}
 }
@@ -100,7 +100,7 @@ function reloadData(){
 		document.querySelectorAll('form')[i].querySelectorAll('.input-text')[0].value = storage.user[i].login;
 		document.querySelectorAll('form')[i].querySelectorAll('.input-text')[1].value = storage.user[i].pass;
 		document.querySelectorAll('form')[i].querySelectorAll('select')[0].value = storage.user[i].cat1;
-		document.querySelectorAll('form')[i].querySelectorAll('select')[0].value = storage.user[i].cat2;
+		document.querySelectorAll('form')[i].querySelectorAll('select')[1].value = storage.user[i].cat2;
 
 		document.querySelectorAll('div > input')[0].value = storage.user[5]
 		document.querySelectorAll('.rangeview')[0].innerText = storage.user[5]

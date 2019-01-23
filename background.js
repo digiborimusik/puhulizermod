@@ -36,11 +36,11 @@ function storageTest(){
 			console.log("storage empty")
 			storage = {
 				user:{
-					0:{cat1: "volvo", cat2: "volvo", checkd: true, login: "ivan", pass: "titan"},
-					1:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
-					2:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
-					3:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
-					4:{cat1: "volvo", cat2: "volvo", checkd: false, login: "", pass: ""},
+					0:{cat1: "DWDM", cat2: "Включено", checkd: true, login: "ivan", pass: "titan"},
+					1:{cat1: "DWDM", cat2: "Включено", checkd: false, login: "", pass: ""},
+					2:{cat1: "DWDM", cat2: "Включено", checkd: false, login: "", pass: ""},
+					3:{cat1: "DWDM", cat2: "Включено", checkd: false, login: "", pass: ""},
+					4:{cat1: "DWDM", cat2: "Включено", checkd: false, login: "", pass: ""},
 					5:6,
 					6:6,
 					7:6,
