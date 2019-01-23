@@ -430,13 +430,15 @@ function processDat(){
 				document.querySelector('#TsiVisitPageTsiFFMResCategoryL2ComboBoxEdit-right-icon-wrapper').click()
 			}
 			function clickResCategoryChose(){
-				document.querySelector('.listview-scroll > ul > [data-item-marker="Абонентська проводка"]').click()
+				let cat1 = storage.user[storage.user[8]].cat1;
+				document.querySelector('.listview-scroll > ul > [data-item-marker="' + cat1 + '"]').click()
 			}
 			function clickWorkCatScroller() {
 				document.querySelector('#TsiVisitPageTsiFFMWorkCategoryL2ComboBoxEdit-right-icon-wrapper').click()
 			}
 			function clickWorkCategoryChose(){
-				document.querySelector('.listview-scroll > ul > [data-item-marker="Виконано ремонт"]').click()
+				let cat2 = storage.user[storage.user[8]].cat2;
+				document.querySelector('.listview-scroll > ul > [data-item-marker="' + cat2 + '"]').click()
 			}
 			return
 		}
