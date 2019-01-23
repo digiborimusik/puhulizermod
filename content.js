@@ -310,6 +310,7 @@ function loadQuest(){
 //
 function processDat(){
 	var isLoading = loadSensor();
+	storageUpdate("user");
 
 	if (isLoading === true) {
 		console.log("is loading true")
@@ -330,10 +331,17 @@ function processDat(){
 			console.log("Назначена");
 			var dif = findElTimeDiference(p);
 			console.log(dif)
+			if (dif === false && undefined) {
+				console.log('find time fail');
+				processDat();
+			}
 			if (dif >= 5) {
 				setTimeout(clickScroller,1000);
 				setTimeout(clickNextStep,2000);
 				setTimeout(done,10000);
+			} else {
+				huender("Not now");
+				setTimeout(done,1000);
 			}
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
@@ -347,10 +355,17 @@ function processDat(){
 			console.log("Подтверждена");
 			var dif = findElTimeDiference(p);
 			console.log(dif)
-			if (dif >= 5) {
+			if (dif === false && undefined) {
+				console.log('find time fail');
+				processDat();
+			}
+			if (dif >= storage.user[5]) {
 				setTimeout(clickScroller,1000);
 				setTimeout(clickNextStep,2000);
 				setTimeout(done,10000);
+			} else {
+				huender("Not now");
+				setTimeout(done,1000);
 			}
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
@@ -364,10 +379,17 @@ function processDat(){
 			console.log("В пути");
 			var dif = findElTimeDiference(p);
 			console.log(dif);
-			if (dif >= 5) {
+			if (dif === false && undefined) {
+				console.log('find time fail');
+				processDat();
+			}
+			if (dif >= storage.user[6]) {
 				setTimeout(clickScroller,1000);
 				setTimeout(clickNextStep,2000);
 				setTimeout(done,10000);
+			} else {
+				huender("Not now");
+				setTimeout(done,1000);
 			}
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
@@ -381,7 +403,12 @@ function processDat(){
 			console.log("На объекте");
 			var dif = findElTimeDiference(p);
 			console.log(dif)
-			if (dif >= 5) {
+			if (dif === false && undefined) {
+				console.log('find time fail');
+				processDat();
+			}
+			console.log(storage.user[7])
+			if (dif >= storage.user[7]) {
 				setTimeout(clickScroller,1000);
 				setTimeout(clickNextStep,2000);
 				setTimeout(clickResCatScroller,3000);
@@ -389,6 +416,9 @@ function processDat(){
 				setTimeout(clickWorkCatScroller,5000);
 				setTimeout(clickWorkCategoryChose,6000);
 				setTimeout(done,10000);
+			} else {
+				huender("Not now");
+				setTimeout(done,1000);
 			}
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
@@ -432,6 +462,7 @@ function processDat(){
 				return minutesLeft
 			}
 		}
+		return false
 	}
 }
 
