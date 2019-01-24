@@ -17,7 +17,7 @@ function loadSensor(){
 
 //Self invocation by msg
 chrome.runtime.sendMessage({greeting: "content", sayHi: "Content script there!!"});
-//setTimeout(fail,120000);
+setTimeout(fail,120000);
 
 function fail(){
 	console.log("failsafe")

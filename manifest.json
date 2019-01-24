@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "BpmonlinePuhuhulizerMod",
-	"version": "0.6",
+	"version": "1.22",
 	"permissions": ["tabs"],
 	"permissions": ["storage"],
 	"content_scripts":[
@@ -19,5 +19,10 @@
 	},
 	"browser_action": {
 		"default_icon": "lasthope.png"
+	},
+	"icons": {
+		"16" : "lasthope.png",
+		"48" : "lasthope.png",
+		"128" : "lasthope.png"
 	}
 }

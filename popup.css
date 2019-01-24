@@ -575,50 +575,50 @@ form .button:active {
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   position: relative;
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 .console ul li:nth-last-child(15) {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 .console ul li:nth-last-child(14) {
-  opacity: 0.35;
+  opacity: 0.2;
 }
 .console ul li:nth-last-child(13) {
-  opacity: 0.4;
+  opacity: 0.25;
 }
 .console ul li:nth-last-child(12) {
-  opacity: 0.45;
+  opacity: 0.30;
 }
 .console ul li:nth-last-child(11) {
-  opacity: 0.5;
+  opacity: 0.35;
 }
 .console ul li:nth-last-child(10) {
-  opacity: 0.55;
+  opacity: 0.40;
 }
 .console ul li:nth-last-child(9) {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 .console ul li:nth-last-child(8) {
-  opacity: 0.65;
+  opacity: 0.55;
 }
 .console ul li:nth-last-child(7) {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 .console ul li:nth-last-child(6) {
-  opacity: 0.75;
+  opacity: 0.65;
 }
 .console ul li:nth-last-child(5) {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .console ul li:nth-last-child(4) {
-  opacity: 0.85;
+  opacity: 0.75;
 }
 .console ul li:nth-last-child(3) {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .console ul li:nth-last-child(2) {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 .console ul li:nth-last-child(1) {
   opacity: 1;
