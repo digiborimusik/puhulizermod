@@ -329,20 +329,10 @@ function processDat(){
 	function cascadeSelection(p){
 		if (p === "Назначена") {
 			console.log("Назначена");
-			var dif = findElTimeDiference(p);
-			console.log(dif)
-			if (dif === false && undefined) {
-				console.log('find time fail');
-				processDat();
-			}
-			if (dif >= 5) {
-				setTimeout(clickScroller,1000);
-				setTimeout(clickNextStep,2000);
-				setTimeout(done,10000);
-			} else {
-				huender("Not now");
-				setTimeout(done,1000);
-			}
+			setTimeout(clickScroller,1000);
+			setTimeout(clickNextStep,2000);
+			setTimeout(done,10000);
+			
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
 			}
@@ -355,6 +345,9 @@ function processDat(){
 			console.log("Подтверждена");
 			var dif = findElTimeDiference(p);
 			console.log(dif)
+			huender('Time difference if ' + dif + 'min');
+			console.log(storage.user[5])
+			huender('Time difference setup ' + storage.user[5] + 'min');
 			if (dif === false && undefined) {
 				console.log('find time fail');
 				processDat();
@@ -378,7 +371,10 @@ function processDat(){
 		if (p === "В пути") {
 			console.log("В пути");
 			var dif = findElTimeDiference(p);
-			console.log(dif);
+			console.log(dif)
+			huender('Time difference if ' + dif + 'min');
+			console.log(storage.user[6])
+			huender('Time difference setup ' + storage.user[6] + 'min');
 			if (dif === false && undefined) {
 				console.log('find time fail');
 				processDat();
@@ -403,11 +399,13 @@ function processDat(){
 			console.log("На объекте");
 			var dif = findElTimeDiference(p);
 			console.log(dif)
+			huender('Time difference if ' + dif + 'min');
+			console.log(storage.user[7])
+			huender('Time difference setup ' + storage.user[7] + 'min');
 			if (dif === false && undefined) {
 				console.log('find time fail');
 				processDat();
 			}
-			console.log(storage.user[7])
 			if (dif >= storage.user[7]) {
 				setTimeout(changeLineData,2000)
 				setTimeout(clickScroller,3000);
@@ -573,7 +571,7 @@ chrome.runtime.onMessage.addListener(
 			huender("focusWin");
 			huender("contentFocus");
 			document.querySelector("[data-item-marker=btnLogin]").click();
-			setTimeout(checker,200);
+			setTimeout(checker,1000);
 		}
 		function checker(){
 			if (document.querySelector('#t-comp0-caption') !== null) {
