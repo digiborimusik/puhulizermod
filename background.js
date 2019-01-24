@@ -302,7 +302,7 @@ chrome.runtime.onMessage.addListener(
 		};
 		storageSet("user",storage);
 
-		setTimeout(restart,100)
+		setTimeout(restart,1000)
 	}
 
 	//wrong ligon data
@@ -320,7 +320,7 @@ chrome.runtime.onMessage.addListener(
 		};
 		storageSet("user",storage);
 
-		setTimeout(restart,100)
+		setTimeout(restart,1000)
 	}
 
 	//Loadquest script ending true  
@@ -347,7 +347,7 @@ chrome.runtime.onMessage.addListener(
 		};
 		storageSet("user",storage);
 
-		setTimeout(restart,100)
+		setTimeout(restart,1000)
 	}
 	function restart(){
 		centralScript.timeouts.push( setTimeout(centralScript.start,5000) )

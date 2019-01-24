@@ -107,7 +107,7 @@ function selectAndLoad(){
 		var questLength = document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div').length;
 		console.log(questLength);
 		
-		document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[0].querySelectorAll('div > div > a')[1].click()
+		document.querySelectorAll('#ReminderNotificationsSchemaNotificationsContainerContainerList > div')[questLength -1].querySelectorAll('div > div > a')[1].click()
 		document.querySelector('[data-item-marker="centerNotification"]').click()
 		console.log("Select")
 		huender("Selected quest")
@@ -409,16 +409,20 @@ function processDat(){
 			}
 			console.log(storage.user[7])
 			if (dif >= storage.user[7]) {
-				setTimeout(clickScroller,1000);
-				setTimeout(clickNextStep,2000);
-				setTimeout(clickResCatScroller,3000);
-				setTimeout(clickResCategoryChose,4000);
-				setTimeout(clickWorkCatScroller,5000);
-				setTimeout(clickWorkCategoryChose,6000);
-				setTimeout(done,10000);
+				setTimeout(changeLineData,2000)
+				setTimeout(clickScroller,3000);
+				setTimeout(clickNextStep,4000);
+				setTimeout(clickResCatScroller,5000);
+				setTimeout(clickResCategoryChose,6000);
+				setTimeout(clickWorkCatScroller,7000);
+				setTimeout(clickWorkCategoryChose,8000);
+				setTimeout(done,15000);
 			} else {
 				huender("Not now");
 				setTimeout(done,1000);
+			}
+			function changeLineData(){
+				document.querySelector('#TsiVisitPageTsiSymptomsActualMemoEdit-el').value = 'PuhulizerMod there';
 			}
 			function clickScroller(){
 				document.querySelector('#TsiVisitPageStatusComboBoxEdit-right-icon-wrapper').click()
