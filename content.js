@@ -17,7 +17,7 @@ function loadSensor(){
 
 //Self invocation by msg
 chrome.runtime.sendMessage({greeting: "content", sayHi: "Content script there!!"});
-setTimeout(fail,120000);
+//setTimeout(fail,120000);
 
 function fail(){
 	console.log("failsafe")
@@ -319,7 +319,8 @@ function processDat(){
 	}
 	if (document.querySelector('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap') !== null) {
 		var currentPosition = document.querySelector('#TsiVisitPageStatusComboBoxEdit-el').value;
-		cascadeSelection(currentPosition);
+		// cascadeSelection(currentPosition);
+		setTimeout(cascadeSelection,1000,currentPosition);
 	} else {
 		console.log("VisitStatusHistoryDetail is null")
 		setTimeout(processDat,1000)
@@ -343,14 +344,14 @@ function processDat(){
 		}
 		if (p === "Подтверждена") {
 			console.log("Подтверждена");
-			var dif = findElTimeDiference(p);
+			var dif = findElTimeDiference('Подтвердить');
 			console.log(dif)
 			huender('Time difference if ' + dif + 'min');
 			console.log(storage.user[5])
 			huender('Time difference setup ' + storage.user[5] + 'min');
-			if (dif === false && undefined) {
+			if (dif === false || undefined) {
 				console.log('find time fail');
-				processDat();
+				setTimeout(processDat,1000);
 			}
 			if (dif >= storage.user[5]) {
 				setTimeout(clickScroller,1000);
@@ -370,14 +371,14 @@ function processDat(){
 		}
 		if (p === "В пути") {
 			console.log("В пути");
-			var dif = findElTimeDiference(p);
+			var dif = findElTimeDiference('В пути');
 			console.log(dif)
 			huender('Time difference if ' + dif + 'min');
 			console.log(storage.user[6])
 			huender('Time difference setup ' + storage.user[6] + 'min');
-			if (dif === false && undefined) {
+			if (dif === false || undefined) {
 				console.log('find time fail');
-				processDat();
+				setTimeout(processDat,1000);
 			}
 			if (dif >= storage.user[6]) {
 				setTimeout(clickScroller,1000);
@@ -397,16 +398,16 @@ function processDat(){
 		}
 		if (p === "На объекте") {
 			console.log("На объекте");
-			var dif = findElTimeDiference(p);
+			var dif = findElTimeDiference('На объекте');
 			console.log(dif)
 			huender('Time difference if ' + dif + 'min');
-			console.log(storage.user[7])
 			huender('Time difference setup ' + storage.user[7] + 'min');
-			if (dif === false && undefined) {
+			if (dif === false || undefined) {
 				console.log('find time fail');
-				processDat();
+				setTimeout(processDat,1000);
 			}
-			if (dif >= storage.user[7]) {
+			console.log(storage.user[7])
+			if (dif >= storage.user[7]){
 				setTimeout(changeLineData,2000)
 				setTimeout(clickScroller,3000);
 				setTimeout(clickNextStep,4000);
@@ -451,14 +452,14 @@ function processDat(){
 	}
 
 	function findElTimeDiference(fiText){
-		var visitStatusLength = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div').length
+		var visitStatusLength = document.querySelectorAll('#grid-VisitActionsDetailV2DataGridGrid-wrap > div').length
 		for (var i = visitStatusLength - 1; i >= 1; i--) {
 			// var fiText = "Назначена";
-			var currText = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div')[i].querySelectorAll('div > span')[1].innerText
+			var currText = document.querySelectorAll('#grid-VisitActionsDetailV2DataGridGrid-wrap > div')[i].querySelectorAll('div > span')[0].innerText
 			console.log(currText)
 			if (fiText === currText) {
 				console.log("Finded")
-				var strOfTime = document.querySelectorAll('#grid-TsiVisitStatusHistoryDetailDataGridGrid-wrap > div')[i].querySelectorAll('div > span')[2].innerText
+				var strOfTime = document.querySelectorAll('#grid-VisitActionsDetailV2DataGridGrid-wrap > div')[i].querySelectorAll('div > span')[2].innerText
 				var timeOfStatus = new Date;
 				var currentTime = new Date;
 				timeOfStatus.setHours(strOfTime[strOfTime.length - 5] + strOfTime[strOfTime.length - 4],strOfTime[strOfTime.length - 2] + strOfTime[strOfTime.length - 1]);
