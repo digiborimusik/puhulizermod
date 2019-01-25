@@ -448,7 +448,9 @@ function processDat(){
 	}
 
 	function done(){
-		huender("All done");
+		document.querySelector('#TsiVisitPageLeftContainerContainer > span').click();
+		setTimeout(huender,5000,"All done");
+		// huender("All done");
 	}
 
 	function findElTimeDiference(fiText){

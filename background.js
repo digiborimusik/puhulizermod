@@ -386,7 +386,7 @@ chrome.runtime.onMessage.addListener(
 		};
 		storageSet("user",storage);
 
-		setTimeout(restart,100)	
+		setTimeout(restart,1000)	
 	}
 
 	});
