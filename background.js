@@ -13,9 +13,9 @@ var cyclePosition = 0;
 
 //change123334
 
-asd
-asdasd
-asdasdasdasd///
+//asd
+//asdasd
+//asdasdasdasd///
 ///asdasdasd
 //Local storage manage
 
