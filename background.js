@@ -24,6 +24,8 @@ function storageUpdate(key){
         });
 }
 
+//new
+
 
 var storage = {};
 
