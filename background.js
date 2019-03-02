@@ -12,7 +12,7 @@ var tabId;
 var cyclePosition = 0;
 
 //change123334
-
+///new func
 //Local storage manage
 
 function storageSet(key,prop){
@@ -25,6 +25,8 @@ function storageUpdate(key){
         console.log(result)
         });
 }
+
+// also new func
 
 var storage = {};
 
