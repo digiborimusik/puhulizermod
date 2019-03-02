@@ -14,7 +14,9 @@ var cyclePosition = 0;
 //change123334
 
 asd
-
+asdasd
+asdasdasdasd///
+///asdasdasd
 //Local storage manage
 
 function storageSet(key,prop){
