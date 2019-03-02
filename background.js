@@ -12,7 +12,7 @@ var tabId;
 var cyclePosition = 0;
 
 //change123334
-
+///new func
 //asd
 //asdasd
 //asdasdasdasd///
@@ -29,6 +29,8 @@ function storageUpdate(key){
         console.log(result)
         });
 }
+
+// also new func
 
 var storage = {};
 
