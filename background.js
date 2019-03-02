@@ -11,13 +11,7 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
-//change123334
-///new func
-//asd
-//asdasd
-//asdasdasdasd///
-///asdasdasd
-//Local storage manage
+
 
 function storageSet(key,prop){
 	chrome.storage.local.set({[key]:prop});
@@ -30,7 +24,8 @@ function storageUpdate(key){
         });
 }
 
-// also new func
+//new
+
 
 var storage = {};
 
