@@ -13,6 +13,8 @@ var cyclePosition = 0;
 
 //change123334
 
+asd
+
 //Local storage manage
 
 function storageSet(key,prop){
