@@ -11,7 +11,34 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
+//develop section
+function stepper(){
+	var stepPosition = 0;
+	var counter;
 
+
+	function next(){
+
+	};
+
+	function prev(){
+
+	};
+
+	function reDo(){
+
+	};
+
+	var stepMap {
+		first:"firstMainFunc",
+		second:"secondMainFunc"
+	}
+}
+
+
+
+
+//Local storage manage
 
 function storageSet(key,prop){
 	chrome.storage.local.set({[key]:prop});
@@ -24,7 +51,6 @@ function storageUpdate(key){
         });
 }
 
-//new
 
 
 var storage = {};
