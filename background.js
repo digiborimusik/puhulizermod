@@ -18,7 +18,10 @@ function stepper(){
 
 
 	function next(){
-
+		setTimeout(reDo,10000);
+		stepArrayMap[stepPosition]();
+		stepPosition++
+		
 	};
 
 	function prev(){
@@ -26,13 +29,23 @@ function stepper(){
 	};
 
 	function reDo(){
-
+		setTimeout(reDo,10000);
+		stepArrayMap[stepPosition]();
 	};
+	
+	var stepArrayMap = [first,second];
 
-	var stepMap {
-		first:"firstMainFunc",
-		second:"secondMainFunc"
+	function first(){
+		console.log("first");
+		return true
 	}
+
+	function second(){
+		console.log("second");
+		return true
+	}
+
+	next()
 }
 
 
