@@ -18,10 +18,19 @@ function stepper(){
 
 
 	function next(){
-		setTimeout(reDo,10000);
-		stepArrayMap[stepPosition]();
-		stepPosition++
-		
+		return new Promise(
+			function (resolve,reject){
+				// promiseTest(function(rt){
+				// 	if (rt === "done"){
+				// 		resolve(rt)
+				// 	}
+				// })
+				noClbk().then(function(answer){
+					resolve(answer)
+
+				})
+			}
+		)
 	};
 
 	function prev(){
@@ -45,7 +54,27 @@ function stepper(){
 		return true
 	}
 
-	next()
+	function promiseTest(clbk){
+		asd = setTimeout(function(){
+			clbk("done")
+		},1000)
+		console.log("Processing please wait")
+	}
+
+	function noClbk(){
+		return new Promise(function(resolve,reject){
+			setTimeout(function(){
+				// resolve("Done")
+				reject("Not now")
+			},1000)
+		});
+	}
+
+	next().then(function(answer){
+		console.log(answer)
+	}).catch(function(answer){
+		console.log("answer")
+	})
 }
 
 
