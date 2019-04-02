@@ -11,6 +11,31 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
+//kata train section
+var theKatas = (function(){
+	var information = "The Katas function";
+	var count = 1;
+	function log(){
+		return "Hi i am log"
+		
+	}
+
+	return {
+		help:function(){
+			return information
+			console.log("I DONT KNOW")
+		},
+		close:function(){
+			console.log("closed")
+		},
+		counter:function(){
+			return ++count
+		},
+		log:log()
+	}
+})();
+
+
 //develop section
 function stepper(){
 	var stepPosition = 0;
