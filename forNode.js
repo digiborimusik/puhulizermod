@@ -1,7 +1,7 @@
 "use strict";
 
 console.log("Hi interpretier")
-
+//THE GREAT TRAIN SECTION
 
 //private func
 var theKatas = (function(){
@@ -159,5 +159,3 @@ function stepper(){
 		console.log(answer)
 	})
 }
-
-

@@ -11,7 +11,11 @@ var lastFocused;
 var tabId;
 var cyclePosition = 0;
 
-//kata train section
+//THE GREAT TRAIN SECTION
+
+
+
+//private func
 var theKatas = (function(){
 	var information = "The Katas function";
 	var count = 1;
@@ -49,9 +53,16 @@ var theKatas = (function(){
 	}
 })();
 
+theKatas.counter();
+theKatas.counter();
+theKatas.counter();
+console.log(theKatas.counter())
 
-//develop section
 
+
+
+
+//Translate string to camelCase
 function toCamelCase(str){
 	var camelStr = "";
 	var dashDetect = false;
@@ -72,20 +83,16 @@ function toCamelCase(str){
 	return camelStr;
 }
 
+console.log(toCamelCase("Hile-holtler!_biches"))
 
-function* generale(n){
+//simple generator
+function* generatorSample(n){
 	yield n;
 	yield n+2;
 	for (let i = n; i < 20 ; ++i) yield i;
 }
 
 
-function nextItem(xs, item) {
-	// TODO: Implement me
-	for (n in xs){
-		console.log(n)
-	}
-  }
 
 
 // promise stepper
