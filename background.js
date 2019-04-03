@@ -1,4 +1,4 @@
-
+"use strict";
 
 console.log("Its background script baby!");
 
@@ -390,11 +390,8 @@ function sendToPopup(sayHi,countTime){
 		status:cyclePosition,
 		sayHi:sayHi,
 		counter:countTime
-		},
-	//     function(response) {
-	//   console.log(response.farewell);
-	// }
-	);
+		}
+	)
 }
 
 
