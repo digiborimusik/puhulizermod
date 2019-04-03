@@ -12,6 +12,44 @@ var tabId;
 var cyclePosition = 0;
 
 //develop section
+
+function toCamelCase(str){
+	var camelStr = "";
+	var dashDetect = false;
+	for(x of str){
+		if(dashDetect){
+			camelStr = camelStr + x.toUpperCase();
+			dashDetect = false;
+			continue
+		}
+
+		if(x == "-" || x == "_"){
+			dashDetect = true;
+			continue
+		}	
+
+		camelStr = camelStr + x;
+	}
+	return camelStr;
+}
+
+
+function* generale(n){
+	yield n;
+	yield n+2;
+	for (let i = n; i < 20 ; ++i) yield i;
+}
+
+
+function nextItem(xs, item) {
+	// TODO: Implement me
+	for (n in xs){
+		console.log(n)
+	}
+  }
+
+
+// promise stepper
 function stepper(){
 	var stepPosition = 0;
 	var counter;
@@ -20,15 +58,18 @@ function stepper(){
 	function next(){
 		return new Promise(
 			function (resolve,reject){
-				// promiseTest(function(rt){
-				// 	if (rt === "done"){
-				// 		resolve(rt)
-				// 	}
-				// })
-				noClbk().then(function(answer){
-					resolve(answer)
-
+				promiseTest(function(rt){
+					if (rt === "done"){
+						resolve(rt)
+					}
+					reject("PromiseTest fail")
 				})
+				// noClbk().then(function(answer){
+				// 	resolve(answer)
+
+				// },function(answer){
+				// 	reject(answer)
+				// })
 			}
 		)
 	};
@@ -64,16 +105,24 @@ function stepper(){
 	function noClbk(){
 		return new Promise(function(resolve,reject){
 			setTimeout(function(){
-				// resolve("Done")
-				reject("Not now")
+				resolve("Done")
+				// reject("Not now")
 			},1000)
 		});
 	}
 
-	next().then(function(answer){
+	next()
+	.then(function(answer){
 		console.log(answer)
-	}).catch(function(answer){
-		console.log("answer")
+	})
+	.then(function(){
+		return noClbk()
+	})
+	.then(function(answ){
+		console.log(answ)
+	})
+	.catch(function(answer){
+		console.log(answer)
 	})
 }
 
