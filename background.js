@@ -12,7 +12,7 @@ var tabId;
 var cyclePosition = 0;
 
 //THE GREAT TRAIN SECTION
-
+let newWorld = 3;
 
 
 //private func
