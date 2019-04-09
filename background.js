@@ -24,18 +24,22 @@ var theKatas = (function(){
 		
 	}
 
+	// Return highest and lowest nubers in a string
 
-	function calcAlphabet (str) {
-		var total = 0;
-		var strArr = str.split("")
-		var alphabet = { a:1 , b:2 , c:3 , d:4 , e:5, f:6 , g:7, h:8, i:9 , j:10 , k:11 , l:12, m:13, n:14 , o:15, p:16 ,q:17 , r:18 , s:19, t:20, u:21, v:22 , w:23 , x:24, y:25 , z:26}
-	  
-		for (var i = strArr[0]; i<strArr.length ; i++){
-			total = total + alphabet[i]
-		}
-		return total;
-	  
-		calcAlphabet("example")
+	function highAndLow(numbers){
+		var nums = numbers.split(' ');
+		return Math.max(...nums) + " " + Math.min(...nums)
+	}
+
+
+	// Return array of n numbers each one are summed with last 3 numbers
+
+	function tribonacci(signature,n){
+		let arr = [];
+			for (let x = 0; x < n; x++) {
+				signature[x] == undefined ? arr.push(arr[x -3] + arr[x-2] + arr[x-1]) : arr.push(signature[x])
+			}
+		return arr
 	}
 
 	return {
@@ -49,6 +53,8 @@ var theKatas = (function(){
 		counter:function(){
 			return ++count
 		},
+		highAndLow,
+		tribonacci,
 		log:log()
 	}
 })();
@@ -66,7 +72,7 @@ console.log(theKatas.counter())
 function toCamelCase(str){
 	var camelStr = "";
 	var dashDetect = false;
-	for(x of str){
+	for(let x of str){
 		if(dashDetect){
 			camelStr = camelStr + x.toUpperCase();
 			dashDetect = false;
