@@ -42,6 +42,40 @@ var theKatas = (function(){
 		return arr
 	}
 
+
+	// return tree
+	// "  *  "
+	// " *** "
+	// "*****"
+
+	function towerBuilder(nFloors) {
+		let arr = [];
+		for(let i = 0; i < nFloors; i++){
+		  arr.push(
+			  " ".repeat(nFloors - i - 1) + 
+			  "*".repeat(i * 2 + 1) + 
+			  " ".repeat(nFloors - i - 1)
+		  )
+	
+		}
+		return arr		
+	}
+
+
+	// return odd or even sum of array
+
+	function oddOrEven(array) {
+			let sum = 0;
+			for(let x of array){
+				sum = sum + x
+			}
+			return sum % 2 !== 0 ? "odd" : "even"
+
+			// best practice
+			//return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
+	}
+	
+
 	return {
 		help:function(){
 			return information
@@ -55,6 +89,8 @@ var theKatas = (function(){
 		},
 		highAndLow,
 		tribonacci,
+		towerBuilder,
+		oddOrEven,
 		log:log()
 	}
 })();
