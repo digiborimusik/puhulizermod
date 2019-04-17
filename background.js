@@ -76,6 +76,14 @@ var theKatas = (function(){
 	}
 	
 
+	//dubstep decoder
+
+	function dubstepDecoder(wubs){
+
+		return wubs.replace(/(WUB)+/gi," ")
+
+	}
+
 	return {
 		help:function(){
 			return information
@@ -91,6 +99,7 @@ var theKatas = (function(){
 		tribonacci,
 		towerBuilder,
 		oddOrEven,
+		dubstepDecoder,
 		log:log()
 	}
 })();
