@@ -80,7 +80,10 @@ var theKatas = (function(){
 
 	function dubstepDecoder(wubs){
 
-		return wubs.replace(/(WUB)+/gi," ")
+		// replace all wub before \w & after \w
+		// return wubs.replace(/(?<!\w)(WUB)+|(WUB)+(?!\w)/gi,"")
+
+		return wubs.replace(/(WUB)+/gi," ").trim()
 
 	}
 
