@@ -87,6 +87,25 @@ var theKatas = (function(){
 
 	}
 
+
+	//Growth of a Population (7kyu)
+
+	function nbYear(p0, percent, aug, p, ct) {
+		// your code
+		if(ct !== undefined){
+			ct++;
+		} else {
+			var ct = 1;
+		}
+		p0 = p0 + p0 * percent / 100 + aug;
+		if(p0 >= p){
+			return ct
+		} else {
+			return nbYear(p0,percent,aug,p,ct)
+		}
+
+	}
+
 	return {
 		help:function(){
 			return information
@@ -103,7 +122,8 @@ var theKatas = (function(){
 		towerBuilder,
 		oddOrEven,
 		dubstepDecoder,
-		log:log()
+		log:log(),
+		nbYear
 	}
 })();
 
