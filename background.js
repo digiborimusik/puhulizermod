@@ -42,6 +42,16 @@ var theKatas = (function(){
 		return arr
 	}
 
+	// Xbonachi sequence
+
+	function xbonacci(signature,n){
+		let l = signature.length;
+		for (let x = l; x < n; x++){
+			signature[x] = signature.slice(x - l).reduce((a, b) => a + b)
+		}
+		return signature.slice(0,n) //  if signature: [9, 2, 13, 15, 19] and n: 4 will be error
+	}
+
 
 	// return tree
 	// "  *  "
@@ -106,6 +116,27 @@ var theKatas = (function(){
 
 	}
 
+	// Turtle racing 
+
+	function race(v1, v2, g) {
+		// Not correct in js
+
+		// let time = g / (v2 - v1);
+		// let arr = [Math.floor(time),Math.floor(60 * (time - Math.floor(time))),Math.floor(60 * ((60 * (time - Math.floor(time))) - Math.floor(60 * (time - Math.floor(time)))))]
+		// return arr 
+
+		
+		// Correct solution fo js
+		var seconds = Math.floor(g / (v2 - v1) * 3600);
+  		var h = Math.floor(seconds / 3600);
+  		var m = Math.floor((seconds - h * 3600) / 60);
+  		var s = seconds - h * 3600 - m * 60;
+		return [h, m, s]
+	}
+
+
+
+
 	return {
 		help:function(){
 			return information
@@ -119,11 +150,13 @@ var theKatas = (function(){
 		},
 		highAndLow,
 		tribonacci,
+		xbonacci,
 		towerBuilder,
 		oddOrEven,
 		dubstepDecoder,
 		log:log(),
-		nbYear
+		nbYear,
+		race
 	}
 })();
 
