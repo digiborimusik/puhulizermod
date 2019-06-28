@@ -165,16 +165,22 @@ theKatas.counter();
 theKatas.counter();
 console.log(theKatas.counter())
 
+
+
+
+
+
 function xhrtest(url){
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET',url,true);
 	xhr.send();
 	xhr.onreadystatechange = function(){
+		console.log(this.response);
+		console.log(this.status);
 		return this.responseText;
+
 	}
 }
-
-
 
 //Translate string to camelCase
 function toCamelCase(str){
@@ -196,6 +202,8 @@ function toCamelCase(str){
 	}
 	return camelStr;
 }
+
+
 
 console.log(toCamelCase("Hile-holtler!_biches"))
 
