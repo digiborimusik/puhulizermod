@@ -135,7 +135,10 @@ var theKatas = (function(){
 	}
 
 
-
+	//Return nth digit num from right to left
+	function findDigit(num, nth){
+		return (nth <= 0) ? -1 : (Math.abs(num).toString().length < nth) ? 0 : Number(Math.abs(num).toString().split('').reverse()[nth -1]);
+	}
 
 	return {
 		help:function(){
@@ -156,7 +159,8 @@ var theKatas = (function(){
 		dubstepDecoder,
 		log:log(),
 		nbYear,
-		race
+		race,
+		findDigit
 	}
 })();
 
