@@ -159,6 +159,27 @@ var theKatas = (function(){
 		return [month,Math.round(startPriceOld + current - startPriceNew)]
 	}
 
+	//!! arr.splice() musthave trick
+	//  Return two combinations of partlist
+
+	function partlist(arr) {
+		// your code
+		partedArr = [];
+		for (let i = 1; i < arr.length; i++) {
+			// let sArr = arr;
+			partedArr.push(
+				[
+					(arr.slice(0,i).join(' ')),
+					(arr.slice(i,arr.length).join(' '))
+				]
+			)
+		}
+		return partedArr
+	}
+
+	// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+	//
 
 
 	return {
@@ -182,7 +203,8 @@ var theKatas = (function(){
 		nbYear,
 		race,
 		findDigit,
-		nbMonths
+		nbMonths,
+		partlist
 	}
 })();
 
