@@ -140,6 +140,27 @@ var theKatas = (function(){
 		return (nth <= 0) ? -1 : (Math.abs(num).toString().length < nth) ? 0 : Number(Math.abs(num).toString().split('').reverse()[nth -1]);
 	}
 
+
+	//Buying a car
+	// Calculate how mny month needed for collect money to buy new car after selling old car
+	// Car loss hes cost buy percent. Percent is grow by 0.5 every two month
+
+	function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+		let month = 0;
+		let current = 0;
+		while(startPriceNew > startPriceOld + current){
+			startPriceOld -= startPriceOld / 100 * percentLossByMonth;
+			startPriceNew -= startPriceNew / 100 * percentLossByMonth;
+			current += savingperMonth;
+			month++;
+			month % 2 == 1 ? percentLossByMonth += 0.5 : 0 ;
+			console.log([startPriceOld,startPriceNew,current,month,percentLossByMonth])
+		}
+		return [month,Math.round(startPriceOld + current - startPriceNew)]
+	}
+
+
+
 	return {
 		help:function(){
 			return information
@@ -160,7 +181,8 @@ var theKatas = (function(){
 		log:log(),
 		nbYear,
 		race,
-		findDigit
+		findDigit,
+		nbMonths
 	}
 })();
 
