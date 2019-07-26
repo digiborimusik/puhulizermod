@@ -177,9 +177,28 @@ var theKatas = (function(){
 		return partedArr
 	}
 
-	// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+	console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
 
 	//
+
+	//order please
+	//"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+	// Magic whith new Regexp \\w+ not \w+
+	function order(words){
+		let arr = words.split(' ');
+		let newArr = [];
+		for (let i = 0; i < arr.length; i++) {
+			// let re = /\w+[4]\w+/;
+			let re = new RegExp(`(\\b|\\w+)${i+1}(\\w+|\\b)`, 'g');
+			newArr[i] = words.match(re)
+		}
+		return newArr.join(' ')
+	}
+
+	console.log(order("is2 Thi1s T4est 3a"))
+
+	//
+
 
 
 	return {
@@ -204,7 +223,8 @@ var theKatas = (function(){
 		race,
 		findDigit,
 		nbMonths,
-		partlist
+		partlist,
+		order
 	}
 })();
 
