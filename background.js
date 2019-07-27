@@ -164,7 +164,7 @@ var theKatas = (function(){
 
 	function partlist(arr) {
 		// your code
-		partedArr = [];
+		let partedArr = [];
 		for (let i = 1; i < arr.length; i++) {
 			// let sArr = arr;
 			partedArr.push(
